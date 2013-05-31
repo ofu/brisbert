@@ -1,0 +1,25 @@
+//
+// Emphasis Component - Default Settings
+// -------------------------------------
+// Change in _settings.scss
+
+$emphasis-prefix : "emphasis"                 !default;
+$emphasis-el     : #{$emphasis-prefix}#{$el}  !default;
+$emphasis-mod    : #{$emphasis-prefix}#{$mod} !default;
+
+
+.#{$emphasis-mod}more {
+  background-color: lighten($color-body-background, 10%);
+}
+
+.#{$emphasis-mod}more-pop {
+  @extend .#{$emphasis-mod}more;
+  @include box-shadow($default-box-shadow);
+}
+
+.#{$emphasis-mod}less {
+  background-color: darken($color-body-background, 5%);
+}
+
+
+

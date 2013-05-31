@@ -1,0 +1,24 @@
+
+//  Mixins
+//  ======
+
+@mixin no-mqueries {
+  @if $breakpoint-no-queries {
+    @content;
+  }
+}
+
+
+// For changing the font size independently of line height
+
+@mixin font-size($to-size, $from-size: $base-font-size) {
+  @if not $relative-font-sizing and $from-size != $base-font-size {
+    @warn "$relative-font-sizing is false but a relative font size was passed to adjust-font-size-to"; }
+  font-size: $font-unit * $to-size / $from-size;
+}
+
+@mixin readable-line-length($characters: 70, $font-size: $base-font-size) {
+  $font-size: $font-size / 1px;
+  max-width: ($characters / $font-size) * 8em; // This just seems to get good estimates
+}
+

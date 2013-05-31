@@ -1,0 +1,270 @@
+//
+// Project settings
+// ================
+
+//
+// Base Variables
+// ==============
+
+//
+// Guidelines
+// ----------
+//
+// Based on BEM and [these guidelines](https://github.com/csswizardry/CSS-Guidelines)
+
+$modifier                          : "--";
+$element                           : "__";
+
+// Aliases
+$mod                               : $modifier;
+$el                                : $element;
+
+//
+// Fonts
+// -----
+
+$font-serif                        : Georgia, "Times New Roman", Times, serif;
+$font-sans-serif                   : "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+$font-monospace                    : Monaco, Courier, monospace;
+
+//
+// Colors
+// ------
+
+// Set some default color variables to keep things consistent
+
+$white                             : #fff;
+$black                             : #000;
+$lightest-grey                     : lighten($black, 95);
+$lighter-grey                      : lighten($black, 90);
+$light-grey                        : lighten($black, 80);
+$lightish-grey                     : lighten($black, 70);
+$grey                              : lighten($black, 50);
+$darkish-grey                      : lighten($black, 30);
+$dark-grey                         : lighten($black, 20);
+$darker-grey                       : lighten($black, 10);
+$darkest-grey                      : lighten($black, 5);
+
+//
+// CSS3 Defaults
+// -------------
+
+$default-border-radius             : 2px;
+$default-box-shadow                : 0 1px 2px rgba($black, 0.2);
+$default-box-shadow-inset          : inset 0 1px 2px rgba($black, 0.1);
+$default-text-shadow               : 0 1px 2px rgba($black, 0.2);
+$default-transition                : 0.2s ease-out;
+
+
+//
+// Theme - Global Variables
+// ========================
+
+//
+// Colors Global
+// -------------
+
+$color-primary                     : #5c9;
+$color-secondary                   : #9c9;
+$color-tertiary                    : #374;
+$color-base-font                   : #171717;
+$color-base-heading                : $color-base-font;
+$color-body-background             : #fcfcfc;
+$color-main-background             : $white;
+$color-link                        : $color-primary;
+$color-link-hover                  : darken($color-link, 15);
+$color-link-active                 : darken($color-link, 40);
+$color-alert                       : lighten(yellow, 35);
+$color-ok                          : lighten(green, 35);
+$color-warning                     : lighten(orange, 35);
+$color-error                       : lighten(red, 35);
+
+
+//
+// Type Global
+// -----------
+
+// Base font size and line height set in - Compass - Vertical Rhythm
+
+$font-family-base                  : 'Minion Pro', $font-serif;
+$font-family-heading               : 'Brandon Grotesque', $font-sans-serif;
+
+//
+// Vendor Variables
+// ================
+
+//
+// Compass - Vertical Rhythm
+// -------------------------
+
+$base-font-size                    : 16px; //? Makes the font size usable by some compass mixins (it needs px)
+$base-line-height                  : 24px; //? The measurement for vertical rhythm, converts to ems
+$rhythm-unit                       : 'em';
+$relative-font-sizing              : true;
+$round-to-nearest-half-line        : true; //? eg. if line-height is 24px, it's allowed to make it 12px if needed
+
+$medium-font-size                  : 18px;
+$large-font-size                   : 22px;
+
+//
+// Compass - Color
+// ---------------
+//
+// See compass-style.org for details
+
+$contrasted-dark-default           : $darkest-grey;
+$contrasted-light-default          : $lightest-grey;
+$contrasted-lightness-threshold    : 60%;
+
+//
+// Breakpoint - default settings
+// -----------------------------
+//
+// Using [Compass Breakpoint plug-in](https://github.com/canarymason/breakpoint)
+
+$breakpoint-default-media          : 'all' !default;
+$breakpoint-default-feature        : 'min-width' !default;
+$breakpoint-default-pair           : 'width' !default;
+$breakpoint-to-ems                 : true;
+$breakpoint-prefixes               : 'webkit' 'moz' !default;
+$breakpoint-prefixed-queries       : 'device-pixel-ratio' 'min-device-pixel-ratio' 'max-device-pixel-ratio' !default;
+$breakpoint-no-queries             : false !default; //? Only true in style-old-ie.scss
+$breakpoint-no-query-wrappers      : false !default;
+
+$breakpoint-base-font-size         : false;
+
+//
+// Breakpoint - mobile first breakpoints values
+// --------------------------------------------
+
+// - Set the min width values
+// - These should not be left the same, adapt them to content
+
+$breakpoint-small                  : 0;
+$breakpoint-medium                 : 560px;
+$breakpoint-large                  : 860px;
+$breakpoint-huge                   : 1100px;
+$breakpoint-hi-res                 : 2 device-pixel-ratio;
+$breakpoint-portrait               : orientation portrait;
+$breakpoint-landscape              : orientation landscape;
+$breakpoint-monochrome             : monochrome;
+$breakpoint-print                  : print;
+
+//
+// Breakpoint - specific breakpoints
+// ---------------------------------
+
+// - Derived from breakpoint values, also written shorthand.
+// - Use `, 'no-query' true` if you want the styles from this breakpoint to be applied to ie8 and older
+
+$lte-small                         : max-width ($breakpoint-medium - 1px);
+$lte-medium                        : max-width ($breakpoint-large - 1px);
+$lte-large                         : max-width ($breakpoint-huge - 1px), 'no-query' true;
+$e-medium                          : $breakpoint-medium ($breakpoint-large - 1px);
+$e-large                           : $breakpoint-large ($breakpoint-huge - 1px), 'no-query' true;
+$gte-small                         : $breakpoint-small, 'no-query' true;
+$gte-medium                        : $breakpoint-medium, 'no-query' true;
+$gte-large                         : $breakpoint-large, 'no-query' true;
+$gte-huge                          : $breakpoint-huge;
+$high-res                          : $breakpoint-hi-res;
+$portrait                          : $breakpoint-portrait;
+$landscape                         : $breakpoint-landscape;
+$mono                              : $breakpoint-monochrome;
+$print                             : $breakpoint-print;
+
+//
+// Theme - Element Variables
+// =========================
+
+//
+// Forms Element
+// -------------
+
+// Form spacing/measurments written in vertical rhythm (eg. .5 is half a vertical rhtyhm)
+
+$form-spacing                      : .5;
+$form-font-size                    : $base-font-size;
+$form-border-radius                : $default-border-radius;
+$form-font                         : $font-family-base;
+$form-label-font-size              : $form-font-size;
+$form-label-color                  : $color-base-font;
+$form-label-weight                 : bold;
+$form-input-font-size              : $form-font-size;
+$form-input-background-color       : lighten($lightest-grey, 2);
+$form-input-color                  : $dark-grey;
+$form-input-border-color           : $light-grey;
+$form-input-box-shadow-inset       : $default-box-shadow-inset;
+$form-input-focus-background-color : $white;
+$form-input-focus-border-color     : $dark-grey;
+$form-fieldset-border-color        : $lighter-grey;
+$form-legend-weight                : bold;
+
+//
+// Theme - Global Component Variables
+// ==================================
+
+//
+// Layout Component
+// ----------------
+
+$layout-prefix                     : "l";
+$layout-mod                        : "#{$layout-prefix}#{$mod}";
+$layout-el                         : "#{$layout-prefix}#{$el}";
+$layout-wrapper-max-width          : 48em;
+$layout-wrapper-min-ie-width       : 44em; // NOTE: old ie only
+$layout-spacing-increments         : 0 1 2;
+$layout-spacing-sides              : top bottom left right;
+
+//
+// Grid Component
+// --------------
+
+$grid-prefix                       : "g";
+$grid-mod                          : "#{$grid-prefix}#{$mod}";
+$grid-el                           : "#{$grid-prefix}#{$el}";
+$grid-padding                      : rhythm(2);
+
+//
+// Width Component
+// ---------------
+
+$width-prefix                      : "w";
+$width-mod                         : "#{$width-prefix}#{$mod}";
+
+
+//
+// Theme - Component Variables
+// ===========================
+
+// Comment out if changing. Add new component settings here.
+
+//
+// Placeholder Component
+// ---------------------
+
+// $placeholder-prefix                : "ph";
+// $placeholder-mod                   : #{$placeholder-prefix}#{$mod};
+// $placeholder-el                    : #{$placeholder-prefix}#{$el};
+
+// $placeholder-type                  : (type-base, $font-family-base),
+//                                      (type-heading, $font-family-heading);
+// $placeholder-color                 : (color-primary, $color-primary),
+//                                      (color-secondary, $color-secondary),
+//                                      (color-tertiary, $color-tertiary),
+//                                      (color-base-font,$color-base-font);
+
+//
+// Lists Component
+// ---------------
+
+// $list-prefix                       : "list";
+// $list-el                           : #{$list-prefix}#{$el};
+// $list-mod                          : #{$list-prefix}#{$mod};
+
+//
+// Emphasis Component
+// ------------------
+
+// $emphasis-prefix                      : "emphasis";
+// $emphasis-el                          : #{$emphasis-prefix}#{$el};
+// $emphasis-mod                         : #{$emphasis-prefix}#{$mod};

@@ -1,0 +1,48 @@
+//
+// Text Component - Default Settings
+// ---------------------------------
+// Change in _settings.scss
+
+$text-prefix : "text";
+$text-el     : #{$text-prefix}#{$el};
+$text-mod    : #{$text-prefix}#{$mod};
+
+/*
+
+### Text Modifiers
+
+```
+<p class="#{$text-mod}lowercase">Lowercase</p>
+<p class="#{$text-mod}uppercase">Uppercase</p>
+<p class="#{$text-mod}capitalize">capitalize</p>
+
+<p class="#{$text-mod}align-left">Align Left</p>
+<p class="#{$text-mod}align-right">Align Right</p>
+<p class="#{$text-mod}align-center">Align Center</p>
+```
+
+*/
+
+.#{$text-mod}lowercase {
+  text-transform: lowercase;
+}
+
+.#{$text-mod}uppercase {
+  text-transform: uppercase;
+}
+
+.#{$text-mod}capitalize {
+  text-transform: capitalize;
+}
+
+.#{$text-mod}align-left {
+  text-align: left;
+}
+
+.#{$text-mod}align-right {
+  text-align: right;
+}
+
+.#{$text-mod}align-center {
+  text-align: center;
+}

@@ -1,0 +1,176 @@
+//
+// Width Component - Default Settings
+// ----------------------------------
+// Change in _settings.scss
+
+$width-prefix : "w"                       !default;
+$width-mod    : "#{$width-prefix}#{$mod}" !default;
+
+// Setup for widths
+
+@mixin width-setup($namespace: "") {
+  .#{$width-mod}#{$namespace}one-whole {
+    width:100%;
+  }
+
+  .#{$width-mod}#{$namespace}one-half {
+    width:50%;
+  }
+
+  .#{$width-mod}#{$namespace}one-third {
+    width:33.333%;
+  }
+  .#{$width-mod}#{$namespace}two-thirds {
+    width:66.666%;
+  }
+
+  .#{$width-mod}#{$namespace}one-quarter {
+    width:25%;
+  }
+  .#{$width-mod}#{$namespace}two-quarters {
+    @extend .#{$width-mod}#{$namespace}one-half;
+  }
+  .#{$width-mod}#{$namespace}three-quarters {
+    width:75%;
+  }
+
+  .#{$width-mod}#{$namespace}one-fifth {
+    width:20%;
+  }
+  .#{$width-mod}#{$namespace}two-fifths {
+    width:40%;
+  }
+  .#{$width-mod}#{$namespace}three-fifths {
+    width:60%;
+  }
+  .#{$width-mod}#{$namespace}four-fifths {
+    width:80%;
+  }
+
+  .#{$width-mod}#{$namespace}one-sixth {
+    width:16.666%;
+  }
+  .#{$width-mod}#{$namespace}two-sixths {
+    @extend .#{$width-mod}#{$namespace}one-third;
+  }
+  .#{$width-mod}#{$namespace}three-sixths {
+    @extend .#{$width-mod}#{$namespace}one-half;
+  }
+  .#{$width-mod}#{$namespace}four-sixths {
+    @extend .#{$width-mod}#{$namespace}two-thirds;
+  }
+  .#{$width-mod}#{$namespace}five-sixths {
+    width:83.333%;
+  }
+
+  .#{$width-mod}#{$namespace}one-eighth {
+    width:12.5%;
+  }
+  .#{$width-mod}#{$namespace}two-eighths {
+    @extend .#{$width-mod}#{$namespace}one-quarter;
+  }
+  .#{$width-mod}#{$namespace}three-eighths {
+    width:37.5%;
+  }
+  .#{$width-mod}#{$namespace}four-eighths {
+    @extend .#{$width-mod}#{$namespace}one-half;
+  }
+  .#{$width-mod}#{$namespace}five-eighths {
+    width:62.5%;
+  }
+  .#{$width-mod}#{$namespace}six-eighths {
+    @extend .#{$width-mod}#{$namespace}three-quarters;
+  }
+  .#{$width-mod}#{$namespace}seven-eighths {
+    width:87.5%;
+  }
+
+
+  .#{$width-mod}#{$namespace}one-tenth {
+    width:10%;
+  }
+  .#{$width-mod}#{$namespace}two-tenths {
+    @extend .#{$width-mod}#{$namespace}one-fifth;
+  }
+  .#{$width-mod}#{$namespace}three-tenths {
+    width:30%;
+  }
+  .#{$width-mod}#{$namespace}four-tenths {
+    @extend .#{$width-mod}#{$namespace}two-fifths;
+  }
+  .#{$width-mod}#{$namespace}five-tenths {
+    @extend .#{$width-mod}#{$namespace}one-half;
+  }
+  .#{$width-mod}#{$namespace}six-tenths {
+    @extend .#{$width-mod}#{$namespace}three-fifths;
+  }
+  .#{$width-mod}#{$namespace}seven-tenths {
+    width:70%;
+  }
+  .#{$width-mod}#{$namespace}eight-tenths {
+    @extend .#{$width-mod}#{$namespace}four-fifths;
+  }
+  .#{$width-mod}#{$namespace}nine-tenths {
+    width:90%;
+  }
+
+  .#{$width-mod}#{$namespace}one-twelfth {
+    width:8.333%;
+  }
+  .#{$width-mod}#{$namespace}two-twelfths {
+    @extend .#{$width-mod}#{$namespace}one-sixth;
+  }
+  .#{$width-mod}#{$namespace}three-twelfths {
+    @extend .#{$width-mod}#{$namespace}one-quarter;
+  }
+  .#{$width-mod}#{$namespace}four-twelfths {
+    @extend .#{$width-mod}#{$namespace}one-third;
+  }
+  .#{$width-mod}#{$namespace}five-twelfths {
+    width:41.666%
+  }
+  .#{$width-mod}#{$namespace}six-twelfths {
+    @extend .#{$width-mod}#{$namespace}one-half;
+  }
+  .#{$width-mod}#{$namespace}seven-twelfths {
+    width:58.333%;
+  }
+  .#{$width-mod}#{$namespace}eight-twelfths {
+    @extend .#{$width-mod}#{$namespace}two-thirds;
+  }
+  .#{$width-mod}#{$namespace}nine-twelfths {
+    @extend .#{$width-mod}#{$namespace}three-quarters;
+  }
+  .#{$width-mod}#{$namespace}ten-twelfths {
+    @extend .#{$width-mod}#{$namespace}five-sixths;
+  }
+  .#{$width-mod}#{$namespace}eleven-twelfths {
+    width:91.666%;
+  }
+}
+
+// Apply Global Widths - Don't apply to small
+
+@include breakpoint($gte-medium) {
+  @include width-setup;
+}
+
+// Small Only Widths
+@include breakpoint($lte-small) {
+  @include width-setup('s-');
+}
+
+// Medium Only Widths
+@include breakpoint($e-medium) {
+  @include width-setup('m-');
+}
+
+// Large Only Widths
+@include breakpoint($e-large) {
+  @include width-setup('l-');
+}
+
+// Huge and up Widths
+@include breakpoint($gte-huge) {
+  @include width-setup('h-');
+}

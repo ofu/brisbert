@@ -1,0 +1,2175 @@
+/*
+
+# Styleguide
+*/
+/*
+  Mixins are slightly modified from Benjamin Doherty's first implementations: http://gist.github.com/377912
+  rgba-background mixin can now be passed an option $dir variable
+*/
+/*
+
+## Settings
+*/
+/*
+
+### Colors
+
+<div class="ph__color-primary">$color-primary</div>
+<div class="ph__color-secondary">$color-secondary</div>
+<div class="ph__color-tertiary">$color-tertiary</div>
+<div class="ph__color-base-font">$color-base-font</div>
+
+*/
+[class*="ph__color"] {
+  margin-bottom: 1.5em;
+  width: 100%;
+  font-family: Monaco, Courier, monospace;
+  line-height: 2.25em;
+}
+[class*="ph__color"]:before {
+  display: block;
+  content: "";
+  height: 3em;
+}
+[class*="ph__color"]:after {
+  display: block;
+  padding: 0 0.75em;
+  background-color: rgba(0, 0, 0, 0.025);
+}
+@media (min-width: 53.75em) {
+  [class*="ph__color"] {
+    line-height: 4.5em;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.025);
+  }
+  [class*="ph__color"]:before {
+    height: 4.5em;
+    float: left;
+    width: 20%;
+    margin-right: 0.75em;
+  }
+  [class*="ph__color"]:after {
+    float: right;
+    width: 20%;
+    text-align: center;
+    margin-left: 0.75em;
+  }
+}
+
+.ph__color-primary:before {
+  background-color: #55cc99;
+}
+.ph__color-primary:after {
+  content: "#55cc99";
+}
+
+.ph__color-secondary:before {
+  background-color: #99cc99;
+}
+.ph__color-secondary:after {
+  content: "#99cc99";
+}
+
+.ph__color-tertiary:before {
+  background-color: #337744;
+}
+.ph__color-tertiary:after {
+  content: "#337744";
+}
+
+.ph__color-base-font:before {
+  background-color: #171717;
+}
+.ph__color-base-font:after {
+  content: "#171717";
+}
+
+/*
+### Type
+
+<div class="ph__type-base">$font-family-base</div>
+<div class="ph__type-heading">$font-family-heading</div>
+
+*/
+[class*="ph__type"] {
+  margin-bottom: 1.5em;
+  padding: 0 0.75em;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.025);
+  font-family: Monaco, Courier, monospace;
+  line-height: 2.25em;
+  line-height: 3em;
+}
+[class*="ph__type"]:before {
+  display: block;
+  margin: 0 -0.75em;
+  padding: 0 0.75em;
+  background-color: rgba(0, 0, 0, 0.025);
+  content: "";
+}
+
+.ph__type-base:before {
+  font-family: "Minion Pro", Georgia, "Times New Roman", Times, serif;
+  content: '"Minion Pro", Georgia, "Times New Roman", Times, serif';
+}
+
+.ph__type-heading:before {
+  font-family: "Brandon Grotesque", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+  content: '"Brandon Grotesque", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif';
+}
+
+.ph__block, .ph__inline-block {
+  line-height: 7.5em;
+  text-align: center;
+  background-color: #e6e6e6;
+  display: block;
+}
+
+.ph__inline-block {
+  display: inline-block;
+}
+
+/*
+
+## Elements
+NOTE: No classes should go in element files
+
+*/
+@-ms-viewport {
+  width: device-width;
+}
+
+@viewport {
+  width: device-width;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+[hidden] {
+  display: none;
+}
+
+html {
+  line-height: 1.5em;
+  color: #171717;
+  font-size: 16px;
+  font-family: "Minion Pro", Georgia, "Times New Roman", Times, serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+@media (min-width: 35em) {
+  html {
+    font-size: 1.125em;
+    line-height: 1.66667em;
+  }
+}
+@media (min-width: 53.75em) {
+  html {
+    font-size: 1.375em;
+    line-height: 1.63636em;
+  }
+}
+
+body {
+  margin: 0;
+  background: #fcfcfc;
+  -webkit-overflow-scroll: touch;
+}
+
+/*
+### Headings
+
+#### General headings
+
+Used to section content and create hierarchy
+
+```
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+```
+```
+<div class="alpha">Alpha</div>
+<div class="beta">Beta</div>
+<div class="gamma">Gamma</div>
+<div class="delta">Delta</div>
+<div class="epsilon">Epsilon</div>
+<div class="zeta">Zeta</div>
+```
+
+*/
+h1,
+.alpha, h2,
+.beta, h3,
+.gamma, h4,
+.delta, h5,
+.epsilon, h6,
+.zeta {
+  color: #171717;
+  margin: 0;
+  font-family: "Brandon Grotesque", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+h1,
+.alpha {
+  font-size: 2.25em;
+  line-height: 1.33333em;
+}
+
+h1 {
+  margin-bottom: 0.33333em;
+}
+
+h2,
+.beta {
+  font-size: 1.75em;
+  line-height: 1.28571em;
+}
+
+h2 {
+  margin-top: 0.85714em;
+  margin-bottom: 0.42857em;
+}
+
+h3,
+.gamma {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+h3 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+h4,
+.delta {
+  font-size: 1.25em;
+  line-height: 1.2em;
+}
+
+h4 {
+  margin-top: 0.6em;
+  margin-bottom: 0.3em;
+}
+
+h5,
+.epsilon {
+  font-weight: 200;
+  font-size: 1.125em;
+  line-height: 1.33333em;
+}
+
+h5 {
+  margin-top: 0.66667em;
+  margin-bottom: 0.66667em;
+}
+
+h6,
+.zeta {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+h6 {
+  margin-top: 0.75em;
+}
+
+/*
+
+### Text
+
+#### Standard Paragraph
+
+```
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus nisi et eros bibendum lacinia. Curabitur sed est nec urna pretium vulputate ut eget lectus. In ultricies, tellus non vehicula malesuada, augue sem aliquet tellus, ut faucibus turpis ante quis nibh. Ut vel turpis tortor, a consectetur ipsum. Sed posuere commodo vestibulum. Pellentesque volutpat diam sem.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus nisi et eros bibendum lacinia. Curabitur sed est nec urna pretium vulputate ut eget lectus. In ultricies, tellus non vehicula malesuada, augue sem aliquet tellus, ut faucibus turpis ante quis nibh. Ut vel turpis tortor, a consectetur ipsum. Sed posuere commodo vestibulum. Pellentesque volutpat diam sem.</p>
+```
+
+*/
+p {
+  margin: 0 0 0.75em;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/*
+
+### Links
+
+```
+<a href="#">Link</a>
+<br>
+<a href="#" class=":hover">Link (Hover)</a>
+<br>
+<a href="#" class=":active">Link (Active)</a>
+<br>
+<a href="#" class=":focus">Link (Focus)</a>
+```
+
+*/
+a {
+  color: #55cc99;
+  text-decoration: none;
+  -webkit-transition: 0.2s ease-out;
+  -moz-transition: 0.2s ease-out;
+  -o-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+a:hover,
+.\3A hover,
+a:focus,
+.\3A focus {
+  color: #31a372;
+}
+
+a:focus,
+.\3A focus {
+  outline: thin dotted;
+}
+
+a:active,
+.\3A active
+a:hover,
+.\3A hover {
+  outline: 0;
+}
+
+a:active,
+.is-active a,
+a.is-active,
+.\3A active {
+  color: #14412e;
+}
+
+/*
+
+### Lists
+
+#### Unordered List
+
+```
+<ul>
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+</ul>
+```
+
+#### Ordered List
+
+```
+<ol>
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+</ol>
+```
+
+*/
+ul,
+ol {
+  margin: 0.75em 0;
+  padding: 0 0 0 1.5em;
+}
+ul li,
+ol li {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+/*
+
+#### Definition List
+
+```
+<dl>
+  <dt>Term</dt>
+  <dd>Definition</dd>
+  <dt>Term</dt>
+  <dd>Definition</dd>
+  <dt>Term</dt>
+  <dd>Definition</dd>
+  <dt>Term</dt>
+  <dd>Definition</dd>
+</dl>
+```
+
+*/
+dd {
+  margin: 0 0 0 1.5em;
+}
+
+/*
+
+### Tables
+
+
+```
+<table>
+  <thead>
+    <tr>
+      <th>Foo</th>
+      <th>Bar</th>
+    </tr>
+      <th>Lorem</th>
+      <th>Ipsum</th>
+      <th>Dolor</th>
+      <th>Sit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Sit</th>
+      <td>Dolor</td>
+      <td>03.788</td>
+      <td>Lorem</td>
+    </tr>
+    <tr>
+      <td>Dolor</td>
+      <td>32.210</td>
+      <td>Lorem</td>
+      <td>Lorem</td>
+    </tr>
+    <tr>
+      <td>Dolor</td>
+      <td>47.797</td>
+      <td>Lorem</td>
+      <td>Lorem</td>
+    </tr>
+    <tr>
+      <th>Sit</th>
+      <td>Dolor</td>
+      <td>09.640</td>
+      <td>Lorem</td>
+    </tr>
+    <tr>
+      <td>Dolor</td>
+      <td>12.117</td>
+      <td>Lorem</td>
+      <td>Lorem</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+*/
+table {
+  position: relative;
+  display: block;
+  overflow: auto;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  -webkit-overflow-scrolling: touch;
+}
+
+thead {
+  border-bottom: 1px solid #b3b3b3;
+}
+
+th,
+td {
+  padding: 0.1875em 0.375em;
+  text-align: left;
+}
+@media (min-width: 35em) {
+  th,
+  td {
+    padding: 0.375em 0.75em;
+  }
+}
+
+[colspan] {
+  text-align: center;
+}
+
+[colspan="1"] {
+  text-align: left;
+}
+
+[rowspan] {
+  vertical-align: middle;
+}
+
+[rowspan="1"] {
+  vertical-align: top;
+}
+
+.numerical {
+  text-align: right;
+}
+
+/*
+
+### Forms
+
+#### Basic Elements
+
+```
+<div class="l__wrapper">
+  <form>
+    <label for="basic-input">This is a label.</label>
+    <input type="text" id="basic-input" name="basic-input" placeholder="Standard Input">
+    <fieldset>
+      <legend>Fieldset Name</legend>
+      <input type="text" placeholder="Street">
+      <div class="g--tight">
+        <div class="w--two-quarters w--s-two-quarters g__item">
+          <input type="text" placeholder="City">
+        </div>
+        <div class="w--one-quarter w--s-one-quarter g__item">
+          <input type="text" placeholder="State">
+        </div>
+        <div class="w--one-quarter w--s-one-quarter g__item">
+          <input type="text" placeholder="ZIP">
+        </div>
+      </div>
+    </fieldset>
+    <textarea placeholder="Message"></textarea>
+  </form>
+</div>
+```
+
+*/
+form {
+  margin: 0 0 0.75em;
+  font-family: "Minion Pro", Georgia, "Times New Roman", Times, serif;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+fieldset {
+  border-style: solid;
+  border-width: 0.0625em;
+  padding: 0.6875em;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  margin: 1.125em 0;
+  padding-bottom: 0;
+  border-color: #e6e6e6;
+}
+
+legend {
+  border: 0;
+  font-weight: bold;
+  background: white;
+  padding: 0 0.1875em;
+  margin-left: -0.1875em;
+}
+
+label {
+  font-size: 1em;
+  line-height: 1.5em;
+  display: block;
+  margin-bottom: 0.375em;
+  color: #171717;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font-size: 100%;
+  font-family: inherit;
+}
+
+button,
+input {
+  line-height: normal;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0;
+}
+
+input[type="search"] {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transition: 0.2s ease-out;
+  -moz-transition: 0.2s ease-out;
+  -o-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+  font-size: 1em;
+  border-style: solid;
+  border-width: 0.0625em;
+  padding: 0.3125em;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  display: block;
+  width: 100%;
+  border-color: #cccccc;
+  background-color: #f7f7f7;
+  color: #333333;
+  margin: 0 0 0.75em;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+  -webkit-transition: 0.2s ease-out;
+  -moz-transition: 0.2s ease-out;
+  -o-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+  outline: none !important;
+  border-color: #333333;
+  background: white;
+}
+input[type="text"][disabled],
+input[type="password"][disabled],
+input[type="date"][disabled],
+input[type="datetime"][disabled],
+input[type="email"][disabled],
+input[type="number"][disabled],
+input[type="search"][disabled],
+input[type="tel"][disabled],
+input[type="time"][disabled],
+input[type="url"][disabled],
+textarea[disabled] {
+  background-color: #cccccc;
+}
+
+textarea {
+  overflow: auto;
+  height: auto;
+  vertical-align: top;
+}
+
+select {
+  width: 100%;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+img {
+  max-width: 100%;
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  color: gray;
+}
+
+/*
+
+### Miscellaneous
+
+#### Horizontal Rule
+
+```
+<hr>
+```
+
+*/
+hr {
+  height: 1.5em;
+  width: 100%;
+  border: 0;
+  margin: 1.5em 0;
+  background: transparent;
+}
+
+/*
+
+## Global Components
+
+These are components that can be utilised or are depended on by other components
+*/
+/*
+
+### Layout Helpers
+
+#### Clearfix
+
+<div class="ph__block l--clearfix">
+  .l--clearfix
+  (use overflow:hidden)
+</div>
+
+<div class="ph__block l--clearfix-overflow">
+  .l--clearfix-overflow
+  (old style)
+</div>
+
+*/
+.l--clearfix {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+.l--clearfix-overflow {
+  *zoom: 1;
+}
+.l--clearfix-overflow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*
+
+#### Wrapper
+
+$max-site-width is assigned to this
+
+*/
+.l__wrapper {
+  max-width: 48em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 0.75em;
+}
+@media (min-width: 35em) {
+  .l__wrapper {
+    padding: 0 1.5em;
+  }
+}
+@media (min-width: 53.75em) {
+  .l__wrapper {
+    padding: 0 3em;
+  }
+}
+
+/*
+
+#### Spacing
+
+These classes use `!important` as you would not be applying these should always "win".
+Only use them if it does not make sense to add this styling to another element/component.
+
+*/
+/*
+```
+<div class="ph__block l--push--top-0">
+  .l--push--top-0
+</div>
+
+<div class="ph__block l--pad--top-0">
+  .l--pad--top-0
+</div>
+```
+*/
+/*
+```
+<div class="ph__block l--push--bottom-0">
+  .l--push--bottom-0
+</div>
+
+<div class="ph__block l--pad--bottom-0">
+  .l--pad--bottom-0
+</div>
+```
+*/
+/*
+```
+<div class="ph__block l--push--left-0">
+  .l--push--left-0
+</div>
+
+<div class="ph__block l--pad--left-0">
+  .l--pad--left-0
+</div>
+```
+*/
+/*
+```
+<div class="ph__block l--push--right-0">
+  .l--push--right-0
+</div>
+
+<div class="ph__block l--pad--right-0">
+  .l--pad--right-0
+</div>
+```
+*/
+/*
+```
+<div class="ph__block l--push--v-0">
+  .l--push--v-0
+</div>
+
+<div class="ph__block l--pad--v-0">
+  .l--pad--v-0
+</div>
+
+<div class="ph__block l--push--h-0">
+  .l--push--h-0
+</div>
+
+<div class="ph__block l--pad--h-0">
+  .l--pad--h-0
+</div>
+```
+*/
+/*
+```
+<div class="ph__block l--push--top-1">
+  .l--push--top-1
+</div>
+
+<div class="ph__block l--pad--top-1">
+  .l--pad--top-1
+</div>
+```
+*/
+/*
+```
+<div class="ph__block l--push--bottom-1">
+  .l--push--bottom-1
+</div>
+
+<div class="ph__block l--pad--bottom-1">
+  .l--pad--bottom-1
+</div>
+```
+*/
+/*
+```
+<div class="ph__block l--push--left-1">
+  .l--push--left-1
+</div>
+
+<div class="ph__block l--pad--left-1">
+  .l--pad--left-1
+</div>
+```
+*/
+/*
+```
+<div class="ph__block l--push--right-1">
+  .l--push--right-1
+</div>
+
+<div class="ph__block l--pad--right-1">
+  .l--pad--right-1
+</div>
+```
+*/
+/*
+```
+<div class="ph__block l--push--v-1">
+  .l--push--v-1
+</div>
+
+<div class="ph__block l--pad--v-1">
+  .l--pad--v-1
+</div>
+
+<div class="ph__block l--push--h-1">
+  .l--push--h-1
+</div>
+
+<div class="ph__block l--pad--h-1">
+  .l--pad--h-1
+</div>
+```
+*/
+/*
+```
+<div class="ph__block l--push--top-2">
+  .l--push--top-2
+</div>
+
+<div class="ph__block l--pad--top-2">
+  .l--pad--top-2
+</div>
+```
+*/
+/*
+```
+<div class="ph__block l--push--bottom-2">
+  .l--push--bottom-2
+</div>
+
+<div class="ph__block l--pad--bottom-2">
+  .l--pad--bottom-2
+</div>
+```
+*/
+/*
+```
+<div class="ph__block l--push--left-2">
+  .l--push--left-2
+</div>
+
+<div class="ph__block l--pad--left-2">
+  .l--pad--left-2
+</div>
+```
+*/
+/*
+```
+<div class="ph__block l--push--right-2">
+  .l--push--right-2
+</div>
+
+<div class="ph__block l--pad--right-2">
+  .l--pad--right-2
+</div>
+```
+*/
+/*
+```
+<div class="ph__block l--push--v-2">
+  .l--push--v-2
+</div>
+
+<div class="ph__block l--pad--v-2">
+  .l--pad--v-2
+</div>
+
+<div class="ph__block l--push--h-2">
+  .l--push--h-2
+</div>
+
+<div class="ph__block l--pad--h-2">
+  .l--pad--h-2
+</div>
+```
+*/
+.l--push--top-0 {
+  margin-top: 0em !important;
+}
+
+.l--pad--top-0 {
+  padding-top: 0em !important;
+}
+
+.l--push--bottom-0 {
+  margin-bottom: 0em !important;
+}
+
+.l--pad--bottom-0 {
+  padding-bottom: 0em !important;
+}
+
+.l--push--left-0 {
+  margin-left: 0em !important;
+}
+
+.l--pad--left-0 {
+  padding-left: 0em !important;
+}
+
+.l--push--right-0 {
+  margin-right: 0em !important;
+}
+
+.l--pad--right-0 {
+  padding-right: 0em !important;
+}
+
+.l--push--v-0 {
+  margin-top: 0em !important;
+  margin-bottom: 0em !important;
+}
+
+.l--pad--v-0 {
+  padding-top: 0em !important;
+  padding-bottom: 0em !important;
+}
+
+.l--push--h-0 {
+  margin-left: 0em !important;
+  margin-right: 0em !important;
+}
+
+.l--pad--h-0 {
+  padding-left: 0em !important;
+  padding-right: 0em !important;
+}
+
+.l--push--top-1 {
+  margin-top: 1.5em !important;
+}
+
+.l--pad--top-1 {
+  padding-top: 1.5em !important;
+}
+
+.l--push--bottom-1 {
+  margin-bottom: 1.5em !important;
+}
+
+.l--pad--bottom-1 {
+  padding-bottom: 1.5em !important;
+}
+
+.l--push--left-1 {
+  margin-left: 1.5em !important;
+}
+
+.l--pad--left-1 {
+  padding-left: 1.5em !important;
+}
+
+.l--push--right-1 {
+  margin-right: 1.5em !important;
+}
+
+.l--pad--right-1 {
+  padding-right: 1.5em !important;
+}
+
+.l--push--v-1 {
+  margin-top: 1.5em !important;
+  margin-bottom: 1.5em !important;
+}
+
+.l--pad--v-1 {
+  padding-top: 1.5em !important;
+  padding-bottom: 1.5em !important;
+}
+
+.l--push--h-1 {
+  margin-left: 1.5em !important;
+  margin-right: 1.5em !important;
+}
+
+.l--pad--h-1 {
+  padding-left: 1.5em !important;
+  padding-right: 1.5em !important;
+}
+
+.l--push--top-2 {
+  margin-top: 3em !important;
+}
+
+.l--pad--top-2 {
+  padding-top: 3em !important;
+}
+
+.l--push--bottom-2 {
+  margin-bottom: 3em !important;
+}
+
+.l--pad--bottom-2 {
+  padding-bottom: 3em !important;
+}
+
+.l--push--left-2 {
+  margin-left: 3em !important;
+}
+
+.l--pad--left-2 {
+  padding-left: 3em !important;
+}
+
+.l--push--right-2 {
+  margin-right: 3em !important;
+}
+
+.l--pad--right-2 {
+  padding-right: 3em !important;
+}
+
+.l--push--v-2 {
+  margin-top: 3em !important;
+  margin-bottom: 3em !important;
+}
+
+.l--pad--v-2 {
+  padding-top: 3em !important;
+  padding-bottom: 3em !important;
+}
+
+.l--push--h-2 {
+  margin-left: 3em !important;
+  margin-right: 3em !important;
+}
+
+.l--pad--h-2 {
+  padding-left: 3em !important;
+  padding-right: 3em !important;
+}
+
+/*
+
+###  The Grid
+
+#### Standard Grid
+
+```
+<div class="l__wrapper">
+  <div class="g">
+    <div class="w--one-whole g__item"><div class="ph__block">One Whole</div></div>
+  </div>
+
+  <div class="g">
+    <div class="w--five-sixths g__item">
+      <div class="g">
+        <div class="w--one-half g__item"><div class="ph__block">One Half of Five Sixths</div></div>
+        <div class="w--one-half g__item"><div class="ph__block">One Half of Five Sixths</div></div>
+      </div>
+    </div>
+    <div class="w--one-sixth g__item"><div class="ph__block">One Sixth</div></div>
+  </div>
+
+  <div class="g">
+    <div class="w--two-thirds g__item"><div class="ph__block">Two Thirds</div></div>
+    <div class="w--one-third g__item"><div class="ph__block">One Third</div></div>
+  </div>
+
+  <div class="g">
+    <div class="w--three-tenths g__item"><div class="ph__block">Three Tenths</div></div>
+    <div class="w--seven-tenths g__item"><div class="ph__block">Seven Tenths</div></div>
+  </div>
+</div>
+```
+
+*/
+.g, .g--tight, .g--collapsed, .g--rev, .g--right, .g--centered {
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0;
+  margin-left: -0.75em;
+  padding: 0;
+  list-style: none;
+  letter-spacing: -0.31em;
+}
+@media (min-width: 35em) {
+  .g, .g--tight, .g--collapsed, .g--rev, .g--right, .g--centered {
+    margin-left: -1.5em;
+  }
+}
+@media (min-width: 53.75em) {
+  .g, .g--tight, .g--collapsed, .g--rev, .g--right, .g--centered {
+    margin-left: -3em;
+  }
+}
+.g > .g, .g--tight > .g, .g--collapsed > .g, .g--rev > .g, .g--right > .g, .g--centered > .g, .g > .g--tight, .g--tight > .g--tight, .g--collapsed > .g--tight, .g--rev > .g--tight, .g--right > .g--tight, .g--centered > .g--tight, .g > .g--collapsed, .g--tight > .g--collapsed, .g--collapsed > .g--collapsed, .g--rev > .g--collapsed, .g--right > .g--collapsed, .g--centered > .g--collapsed, .g > .g--rev, .g--tight > .g--rev, .g--collapsed > .g--rev, .g--rev > .g--rev, .g--right > .g--rev, .g--centered > .g--rev, .g > .g--right, .g--tight > .g--right, .g--collapsed > .g--right, .g--rev > .g--right, .g--right > .g--right, .g--centered > .g--right, .g > .g--centered, .g--tight > .g--centered, .g--collapsed > .g--centered, .g--rev > .g--centered, .g--right > .g--centered, .g--centered > .g--centered {
+  margin-left: 0;
+}
+
+.opera:-o-prefocus,
+.grid {
+  word-spacing: -0.43em;
+}
+
+.g__item {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  padding-left: 0.75em;
+  width: 100%;
+  vertical-align: top;
+  word-spacing: normal;
+  letter-spacing: normal;
+  *zoom: 1;
+}
+@media (min-width: 35em) {
+  .g__item {
+    padding-left: 1.5em;
+  }
+}
+@media (min-width: 53.75em) {
+  .g__item {
+    padding-left: 3em;
+  }
+}
+
+/*
+
+#### Tight Grid
+
+Tight grids have all the properties of regular grids, minus any spacing.
+
+```
+<div class="l__wrapper">
+  <div class="g--tight">
+    <div class="w--five-sixths g__item"><div class="ph__block">Five Sixths</div></div>
+    <div class="w--one-sixth g__item"><div class="ph__block">One Sixth</div></div>
+  </div>
+</div>
+```
+
+*/
+.g--tight {
+  margin-left: -0.375em;
+}
+@media (min-width: 35em) {
+  .g--tight {
+    margin-left: -0.75em;
+  }
+}
+@media (min-width: 53.75em) {
+  .g--tight {
+    margin-left: -1.5em;
+  }
+}
+.g--tight > .g__item {
+  padding-left: 0.375em;
+}
+@media (min-width: 35em) {
+  .g--tight > .g__item {
+    padding-left: 0.75em;
+  }
+}
+@media (min-width: 53.75em) {
+  .g--tight > .g__item {
+    padding-left: 1.5em;
+  }
+}
+
+/*
+
+#### Collapsed Grid
+
+Collapsed grids have all the properties of regular grids, minus any spacing.
+
+```
+<div class="l__wrapper">
+  <div class="g--collapsed">
+    <div class="w--five-sixths g__item"><div class="ph__block">Five Sixths</div></div>
+    <div class="w--one-sixth g__item"><div class="ph__block">One Sixth</div></div>
+  </div>
+</div>
+```
+
+*/
+.g--collapsed {
+  margin-left: 0;
+}
+.g--collapsed > .g__item {
+  padding-left: 0;
+}
+
+/*
+
+#### Reversed Grid
+
+```
+<div class="l__wrapper">
+  <div class="g--rev">
+    <div class="w--five-sixths g__item"><div class="ph__block">Five Sixths</div></div>
+    <div class="w--one-sixth g__item"><div class="ph__block">One Sixth</div></div>
+  </div>
+</div>
+```
+
+*/
+.g--rev {
+  direction: rtl;
+  text-align: left;
+}
+.g--rev > .g__item {
+  direction: ltr;
+  text-align: left;
+}
+
+/*
+
+#### Right Aligned Grid
+
+Align the entire grid to the right.
+
+```
+<div class="l__wrapper">
+  <div class="g--right">
+    <div class="w--three-sixths g__item"><div class="ph__block">Three Sixths</div></div>
+    <div class="w--one-sixth g__item"><div class="ph__block">One Sixth</div></div>
+  </div>
+</div>
+```
+*/
+.g--right {
+  text-align: right;
+}
+.g--right > .g__item {
+  text-align: left;
+}
+
+/*
+
+#### Center Aligned Grid
+
+Centered grids align grid items centrally without needing to use push or pull classes.
+
+```
+<div class="l__wrapper">
+  <div class="g--centered">
+    <div class="w--three-sixths g__item"><div class="ph__block">Three Sixths</div></div>
+    <div class="w--one-sixth g__item"><div class="ph__block">One Sixth</div></div>
+  </div>
+</div>
+```
+*/
+.g--centered {
+  text-align: center;
+}
+.g--centered > .g__item {
+  text-align: left;
+}
+
+@media (min-width: 35em) {
+  .w--one-whole {
+    width: 100%;
+  }
+
+  .w--one-half, .w--two-quarters, .w--three-sixths, .w--four-eighths, .w--five-tenths, .w--six-twelfths {
+    width: 50%;
+  }
+
+  .w--one-third, .w--two-sixths, .w--four-twelfths {
+    width: 33.333%;
+  }
+
+  .w--two-thirds, .w--four-sixths, .w--eight-twelfths {
+    width: 66.666%;
+  }
+
+  .w--one-quarter, .w--two-eighths, .w--three-twelfths {
+    width: 25%;
+  }
+
+  .w--three-quarters, .w--six-eighths, .w--nine-twelfths {
+    width: 75%;
+  }
+
+  .w--one-fifth, .w--two-tenths {
+    width: 20%;
+  }
+
+  .w--two-fifths, .w--four-tenths {
+    width: 40%;
+  }
+
+  .w--three-fifths, .w--six-tenths {
+    width: 60%;
+  }
+
+  .w--four-fifths, .w--eight-tenths {
+    width: 80%;
+  }
+
+  .w--one-sixth, .w--two-twelfths {
+    width: 16.666%;
+  }
+
+  .w--five-sixths, .w--ten-twelfths {
+    width: 83.333%;
+  }
+
+  .w--one-eighth {
+    width: 12.5%;
+  }
+
+  .w--three-eighths {
+    width: 37.5%;
+  }
+
+  .w--five-eighths {
+    width: 62.5%;
+  }
+
+  .w--seven-eighths {
+    width: 87.5%;
+  }
+
+  .w--one-tenth {
+    width: 10%;
+  }
+
+  .w--three-tenths {
+    width: 30%;
+  }
+
+  .w--seven-tenths {
+    width: 70%;
+  }
+
+  .w--nine-tenths {
+    width: 90%;
+  }
+
+  .w--one-twelfth {
+    width: 8.333%;
+  }
+
+  .w--five-twelfths {
+    width: 41.666%;
+  }
+
+  .w--seven-twelfths {
+    width: 58.333%;
+  }
+
+  .w--eleven-twelfths {
+    width: 91.666%;
+  }
+}
+@media (max-width: 34.9375em) {
+  .w--s-one-whole {
+    width: 100%;
+  }
+
+  .w--s-one-half, .w--s-two-quarters, .w--s-three-sixths, .w--s-four-eighths, .w--s-five-tenths, .w--s-six-twelfths {
+    width: 50%;
+  }
+
+  .w--s-one-third, .w--s-two-sixths, .w--s-four-twelfths {
+    width: 33.333%;
+  }
+
+  .w--s-two-thirds, .w--s-four-sixths, .w--s-eight-twelfths {
+    width: 66.666%;
+  }
+
+  .w--s-one-quarter, .w--s-two-eighths, .w--s-three-twelfths {
+    width: 25%;
+  }
+
+  .w--s-three-quarters, .w--s-six-eighths, .w--s-nine-twelfths {
+    width: 75%;
+  }
+
+  .w--s-one-fifth, .w--s-two-tenths {
+    width: 20%;
+  }
+
+  .w--s-two-fifths, .w--s-four-tenths {
+    width: 40%;
+  }
+
+  .w--s-three-fifths, .w--s-six-tenths {
+    width: 60%;
+  }
+
+  .w--s-four-fifths, .w--s-eight-tenths {
+    width: 80%;
+  }
+
+  .w--s-one-sixth, .w--s-two-twelfths {
+    width: 16.666%;
+  }
+
+  .w--s-five-sixths, .w--s-ten-twelfths {
+    width: 83.333%;
+  }
+
+  .w--s-one-eighth {
+    width: 12.5%;
+  }
+
+  .w--s-three-eighths {
+    width: 37.5%;
+  }
+
+  .w--s-five-eighths {
+    width: 62.5%;
+  }
+
+  .w--s-seven-eighths {
+    width: 87.5%;
+  }
+
+  .w--s-one-tenth {
+    width: 10%;
+  }
+
+  .w--s-three-tenths {
+    width: 30%;
+  }
+
+  .w--s-seven-tenths {
+    width: 70%;
+  }
+
+  .w--s-nine-tenths {
+    width: 90%;
+  }
+
+  .w--s-one-twelfth {
+    width: 8.333%;
+  }
+
+  .w--s-five-twelfths {
+    width: 41.666%;
+  }
+
+  .w--s-seven-twelfths {
+    width: 58.333%;
+  }
+
+  .w--s-eleven-twelfths {
+    width: 91.666%;
+  }
+}
+@media (min-width: 35em) and (max-width: 53.6875em) {
+  .w--m-one-whole {
+    width: 100%;
+  }
+
+  .w--m-one-half, .w--m-two-quarters, .w--m-three-sixths, .w--m-four-eighths, .w--m-five-tenths, .w--m-six-twelfths {
+    width: 50%;
+  }
+
+  .w--m-one-third, .w--m-two-sixths, .w--m-four-twelfths {
+    width: 33.333%;
+  }
+
+  .w--m-two-thirds, .w--m-four-sixths, .w--m-eight-twelfths {
+    width: 66.666%;
+  }
+
+  .w--m-one-quarter, .w--m-two-eighths, .w--m-three-twelfths {
+    width: 25%;
+  }
+
+  .w--m-three-quarters, .w--m-six-eighths, .w--m-nine-twelfths {
+    width: 75%;
+  }
+
+  .w--m-one-fifth, .w--m-two-tenths {
+    width: 20%;
+  }
+
+  .w--m-two-fifths, .w--m-four-tenths {
+    width: 40%;
+  }
+
+  .w--m-three-fifths, .w--m-six-tenths {
+    width: 60%;
+  }
+
+  .w--m-four-fifths, .w--m-eight-tenths {
+    width: 80%;
+  }
+
+  .w--m-one-sixth, .w--m-two-twelfths {
+    width: 16.666%;
+  }
+
+  .w--m-five-sixths, .w--m-ten-twelfths {
+    width: 83.333%;
+  }
+
+  .w--m-one-eighth {
+    width: 12.5%;
+  }
+
+  .w--m-three-eighths {
+    width: 37.5%;
+  }
+
+  .w--m-five-eighths {
+    width: 62.5%;
+  }
+
+  .w--m-seven-eighths {
+    width: 87.5%;
+  }
+
+  .w--m-one-tenth {
+    width: 10%;
+  }
+
+  .w--m-three-tenths {
+    width: 30%;
+  }
+
+  .w--m-seven-tenths {
+    width: 70%;
+  }
+
+  .w--m-nine-tenths {
+    width: 90%;
+  }
+
+  .w--m-one-twelfth {
+    width: 8.333%;
+  }
+
+  .w--m-five-twelfths {
+    width: 41.666%;
+  }
+
+  .w--m-seven-twelfths {
+    width: 58.333%;
+  }
+
+  .w--m-eleven-twelfths {
+    width: 91.666%;
+  }
+}
+@media (min-width: 53.75em) and (max-width: 68.6875em) {
+  .w--l-one-whole {
+    width: 100%;
+  }
+
+  .w--l-one-half, .w--l-two-quarters, .w--l-three-sixths, .w--l-four-eighths, .w--l-five-tenths, .w--l-six-twelfths {
+    width: 50%;
+  }
+
+  .w--l-one-third, .w--l-two-sixths, .w--l-four-twelfths {
+    width: 33.333%;
+  }
+
+  .w--l-two-thirds, .w--l-four-sixths, .w--l-eight-twelfths {
+    width: 66.666%;
+  }
+
+  .w--l-one-quarter, .w--l-two-eighths, .w--l-three-twelfths {
+    width: 25%;
+  }
+
+  .w--l-three-quarters, .w--l-six-eighths, .w--l-nine-twelfths {
+    width: 75%;
+  }
+
+  .w--l-one-fifth, .w--l-two-tenths {
+    width: 20%;
+  }
+
+  .w--l-two-fifths, .w--l-four-tenths {
+    width: 40%;
+  }
+
+  .w--l-three-fifths, .w--l-six-tenths {
+    width: 60%;
+  }
+
+  .w--l-four-fifths, .w--l-eight-tenths {
+    width: 80%;
+  }
+
+  .w--l-one-sixth, .w--l-two-twelfths {
+    width: 16.666%;
+  }
+
+  .w--l-five-sixths, .w--l-ten-twelfths {
+    width: 83.333%;
+  }
+
+  .w--l-one-eighth {
+    width: 12.5%;
+  }
+
+  .w--l-three-eighths {
+    width: 37.5%;
+  }
+
+  .w--l-five-eighths {
+    width: 62.5%;
+  }
+
+  .w--l-seven-eighths {
+    width: 87.5%;
+  }
+
+  .w--l-one-tenth {
+    width: 10%;
+  }
+
+  .w--l-three-tenths {
+    width: 30%;
+  }
+
+  .w--l-seven-tenths {
+    width: 70%;
+  }
+
+  .w--l-nine-tenths {
+    width: 90%;
+  }
+
+  .w--l-one-twelfth {
+    width: 8.333%;
+  }
+
+  .w--l-five-twelfths {
+    width: 41.666%;
+  }
+
+  .w--l-seven-twelfths {
+    width: 58.333%;
+  }
+
+  .w--l-eleven-twelfths {
+    width: 91.666%;
+  }
+}
+@media (min-width: 68.75em) {
+  .w--h-one-whole {
+    width: 100%;
+  }
+
+  .w--h-one-half, .w--h-two-quarters, .w--h-three-sixths, .w--h-four-eighths, .w--h-five-tenths, .w--h-six-twelfths {
+    width: 50%;
+  }
+
+  .w--h-one-third, .w--h-two-sixths, .w--h-four-twelfths {
+    width: 33.333%;
+  }
+
+  .w--h-two-thirds, .w--h-four-sixths, .w--h-eight-twelfths {
+    width: 66.666%;
+  }
+
+  .w--h-one-quarter, .w--h-two-eighths, .w--h-three-twelfths {
+    width: 25%;
+  }
+
+  .w--h-three-quarters, .w--h-six-eighths, .w--h-nine-twelfths {
+    width: 75%;
+  }
+
+  .w--h-one-fifth, .w--h-two-tenths {
+    width: 20%;
+  }
+
+  .w--h-two-fifths, .w--h-four-tenths {
+    width: 40%;
+  }
+
+  .w--h-three-fifths, .w--h-six-tenths {
+    width: 60%;
+  }
+
+  .w--h-four-fifths, .w--h-eight-tenths {
+    width: 80%;
+  }
+
+  .w--h-one-sixth, .w--h-two-twelfths {
+    width: 16.666%;
+  }
+
+  .w--h-five-sixths, .w--h-ten-twelfths {
+    width: 83.333%;
+  }
+
+  .w--h-one-eighth {
+    width: 12.5%;
+  }
+
+  .w--h-three-eighths {
+    width: 37.5%;
+  }
+
+  .w--h-five-eighths {
+    width: 62.5%;
+  }
+
+  .w--h-seven-eighths {
+    width: 87.5%;
+  }
+
+  .w--h-one-tenth {
+    width: 10%;
+  }
+
+  .w--h-three-tenths {
+    width: 30%;
+  }
+
+  .w--h-seven-tenths {
+    width: 70%;
+  }
+
+  .w--h-nine-tenths {
+    width: 90%;
+  }
+
+  .w--h-one-twelfth {
+    width: 8.333%;
+  }
+
+  .w--h-five-twelfths {
+    width: 41.666%;
+  }
+
+  .w--h-seven-twelfths {
+    width: 58.333%;
+  }
+
+  .w--h-eleven-twelfths {
+    width: 91.666%;
+  }
+}
+/*
+
+## Componenents
+*/
+/*
+
+### Text Modifiers
+
+```
+<p class="text--lowercase">Lowercase</p>
+<p class="text--uppercase">Uppercase</p>
+<p class="text--capitalize">capitalize</p>
+
+<p class="text--align-left">Align Left</p>
+<p class="text--align-right">Align Right</p>
+<p class="text--align-center">Align Center</p>
+```
+
+*/
+.text--lowercase {
+  text-transform: lowercase;
+}
+
+.text--uppercase {
+  text-transform: uppercase;
+}
+
+.text--capitalize {
+  text-transform: capitalize;
+}
+
+.text--align-left {
+  text-align: left;
+}
+
+.text--align-right {
+  text-align: right;
+}
+
+.text--align-center {
+  text-align: center;
+}
+
+/*
+#### Sub Heading
+
+Sub-headings can be used when placing a heading under another heading.
+
+```
+<h2>Heading 1</h2>
+<h2 class="heading--sub">Heading Sub 2</h2>
+<br>
+<h3>Heading 3</h3>
+<h4 class="heading--sub">Heading Sub 4</h4>
+```
+
+*/
+.heading--sub {
+  margin-top: 0;
+  font-weight: 400;
+  color: #575757;
+}
+
+/*
+#### Heading secondary
+
+```
+<h2 class="heading--secondary">Heading Secondary 2</h2>
+
+<h3 class="heading--secondary">Heading Secondary 3</h3>
+
+<h4 class="heading--secondary">Heading Secondary 4</h4>
+
+<h5 class="heading--secondary">Heading Secondary 5</h5>
+
+<h6 class="heading--secondary">Heading Secondary 6</h6>
+```
+
+*/
+.heading--secondary {
+  margin-top: 0;
+  color: #171717;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+h2.heading--secondary {
+  font-size: 1.4em;
+  line-height: 1.60714em;
+}
+
+h3.heading--secondary {
+  font-size: 1.2em;
+  line-height: 1.25em;
+}
+
+h4.heading--secondary {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+h5.heading--secondary {
+  font-size: 0.9em;
+  line-height: 1.66667em;
+}
+
+h6.heading--secondary {
+  font-size: 0.8em;
+  line-height: 1.875em;
+}
+
+/*
+### Lists
+
+#### No Bullet List
+
+```
+<ul class="list--no-bullets">
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+</ul>
+```
+
+*/
+.list--no-bullets, nav ul,
+nav ol, .list--horizontal, .list--slat {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.list--no-bullets li, nav ul li,
+nav ol li, .list--horizontal li, .list--slat li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+}
+
+/*
+
+#### Navigation list
+
+```
+<nav>
+  <ul>
+    <li>List item</li>
+    <li>List item</li>
+    <li>List item</li>
+    <li>List item</li>
+  </ul>
+</nav>
+```
+
+*/
+/*
+
+#### Horizontal List
+
+```
+<ul class="list--horizontal">
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+</ul>
+```
+
+*/
+.list--horizontal li {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  margin-left: 0.375em;
+}
+.list--horizontal li:first-child {
+  margin-left: 0;
+}
+
+/*
+
+#### List Slat
+
+```
+<ul class="list--slat">
+  <li>Standard</li>
+  <li><a href="#">Link</a></li>
+  <li><span class="list__title">Title</span></li>
+  <li><span class="list__title"><a href="#">Title Link</a></span></li>
+</ul>
+```
+
+*/
+.list--slat li {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.375em 0;
+}
+.list--slat li > a {
+  display: inline-block;
+}
+.list--slat li:first-child {
+  border-top: none;
+}
+
+.list__title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+.emphasis--more, .emphasis--more-pop {
+  background-color: white;
+}
+
+.emphasis--more-pop {
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.emphasis--less {
+  background-color: #efefef;
+}

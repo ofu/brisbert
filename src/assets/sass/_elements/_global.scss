@@ -1,0 +1,54 @@
+@charset "UTF-8";
+@-ms-viewport {
+  width: device-width;
+}
+
+@viewport {
+  width: device-width;
+}
+
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+[hidden] {
+  display: none;
+}
+
+html {
+  @include reset-baseline;
+  color: $color-base-font;
+  font-size: $base-font-size;
+  font-family: $font-family-base;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  @include breakpoint($gte-medium) {
+    @include adjust-font-size-to($medium-font-size, 1.25);
+  }
+  @include breakpoint($gte-large) {
+    @include adjust-font-size-to($large-font-size, 1.5);
+  }
+}
+
+body {
+  margin: 0;
+  background: $color-body-background;
+  -webkit-overflow-scroll: touch;
+}
