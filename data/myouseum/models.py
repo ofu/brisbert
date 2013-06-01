@@ -69,6 +69,12 @@ def add_photo(photo):
     session = common.DBSession()
     session.add(photo)
 
+def get_item_by_id(value):
+    session = common.DBSession()
+    query = session.query(CollectionItem)
+    query.filter_by(id=value)
+    return query.first()    
+
 def get_items_by_keywords(value, num):
     session = common.DBSession()
     query = session.query(CollectionItem)
@@ -80,5 +86,18 @@ def get_items_by_date(value, num):
     session = common.DBSession()
     query = session.query(Collection)
     query = query.filter_by(Collection.year == int(value))
+    query = query.limit(num)
+    return query.all()
+
+def get_photo_by_id(value):
+    session = common.DBSession()
+    query = session.query(Photo)
+    query.filter_by(id=value)
+    return query.first()    
+
+def get_photos_by_keywords(value, num):
+    session = common.DBSession()
+    query = session.query(Photo)
+    query = query.filter(Photo.story.like('%' + value + '%'))
     query = query.limit(num)
     return query.all()

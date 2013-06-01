@@ -1,19 +1,23 @@
 import dummy
 import myouseum
+import data.common as common
 
 """ Engine list used by the apibert. Objects in the list can be either class 
 instances, or modules
 """
 engine_list_ = { 
     'myouseumi': myouseum.CollectionItemEngine(),
+    'myouseump': myouseum.CollectionPhotoEngine(),
 }
 
 """ Engine descriptions, used by the front end to attribute 
 """
 engine_desc_ = {
-    'myouseumi': 'Queensland Museum Information, stuff, things, and more staff attributing all stuff to things',
+    'myouseumi': 'Queensland Museum Information, MYOUSEUM150',
+    'myouseump': 'Queensland Museum Information, MYOUSEUM150',
 }
-    
+
+common.init('sqlite:///bert.sqlite')    
     
 def get_engines():
     """ Returns a map of database names to their corresponding engines
