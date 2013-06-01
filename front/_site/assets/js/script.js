@@ -1,4 +1,4 @@
-/*! brisbert - v0.1.0 - 2013-06-01
+/*! brisbert - v0.1.0 - 2013-06-02
 * https://github.com/brisbert/brisbert
 * Copyright (c) 2013 Old Folks United; Licensed MIT */
 ;
@@ -11385,13 +11385,17 @@ $(function() {
   $(".form--story__text").width(textBoxWidth * 24 + "px");
 
   $(".form--story__text").autoGrowInput({
-      comfortZone: 10,
+      comfortZone: 20,
       minWidth: 40,
       maxWidth: 320
   });
 
   $(".form--story__text").focus(function() {
     this.select();
+  });
+
+  $(".form--story__text").mouseup(function(e){
+    e.preventDefault();
   });
 });
 

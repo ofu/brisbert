@@ -4,12 +4,16 @@ $(function() {
   $(".form--story__text").width(textBoxWidth * 24 + "px");
 
   $(".form--story__text").autoGrowInput({
-      comfortZone: 10,
+      comfortZone: 20,
       minWidth: 40,
       maxWidth: 320
   });
 
   $(".form--story__text").focus(function() {
     this.select();
+  });
+
+  $(".form--story__text").mouseup(function(e){
+    e.preventDefault();
   });
 });
