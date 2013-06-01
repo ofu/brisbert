@@ -1,0 +1,8 @@
+README
+------
+
+To get the apibert up and running simply run:
+
+python apibert
+
+Assumes python2 is installed as the default python.
