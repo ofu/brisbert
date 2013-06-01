@@ -4,6 +4,7 @@ sys.path.append('./')
 import bottle
 import engines
 import random
+import data.bert.models as bert
 
 """ Set of keys useable by the rest api
 """
@@ -69,6 +70,15 @@ def static_route(filename):
     """Route for our static resources
     """
     return  bottle.static_file(filename, root='./static/')
+
+@bottle.get('/speak')
+def database_bert_speak_to_me():
+    """ Speak to me bert!
+    """     
+    text = '%s. %s. %s.' % (bert.get_random_bert_speak(0).text, 
+        bert.get_random_bert_speak(1).text, bert.get_random_bert_speak(2).text)
+    return {'bert':text}
                                             
 if __name__ == '__main__':
     bottle.run(host='localhost', port=8080, debug=True)
+
