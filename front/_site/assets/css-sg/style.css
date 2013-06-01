@@ -183,13 +183,13 @@ html {
 @media (min-width: 35em) {
   html {
     font-size: 1.125em;
-    line-height: 1.5em;
+    line-height: 1.66667em;
   }
 }
 @media (min-width: 50em) {
   html {
     font-size: 1.25em;
-    line-height: 1.5em;
+    line-height: 1.8em;
   }
 }
 
@@ -919,7 +919,7 @@ $max-site-width is assigned to this
 
 */
 .l__wrapper {
-  max-width: 42em;
+  max-width: 64em;
   margin-left: auto;
   margin-right: auto;
   padding: 0 1.5em;
@@ -929,7 +929,7 @@ $max-site-width is assigned to this
     padding: 0 3em;
   }
 }
-@media (min-width: 50em) {
+@media (min-width: 62.5em) {
   .l__wrapper {
     padding: 0 6em;
   }
@@ -1361,7 +1361,7 @@ Only use them if it does not make sense to add this styling to another element/c
     margin-left: -1.5em;
   }
 }
-@media (min-width: 50em) {
+@media (min-width: 62.5em) {
   .g, .g--tight, .g--collapsed, .g--rev, .g--right, .g--centered {
     margin-left: -3em;
   }
@@ -1391,7 +1391,7 @@ Only use them if it does not make sense to add this styling to another element/c
     padding-left: 1.5em;
   }
 }
-@media (min-width: 50em) {
+@media (min-width: 62.5em) {
   .g__item {
     padding-left: 3em;
   }
@@ -1421,7 +1421,7 @@ Tight grids have all the properties of regular grids, minus any spacing.
     margin-left: -0.75em;
   }
 }
-@media (min-width: 50em) {
+@media (min-width: 62.5em) {
   .g--tight {
     margin-left: -1.5em;
   }
@@ -1434,7 +1434,7 @@ Tight grids have all the properties of regular grids, minus any spacing.
     padding-left: 0.75em;
   }
 }
-@media (min-width: 50em) {
+@media (min-width: 62.5em) {
   .g--tight > .g__item {
     padding-left: 1.5em;
   }
@@ -2488,19 +2488,13 @@ input[type=text].form--story__button:hover,
   font-style: italic;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
-  font-size: 0.75em;
-  line-height: 2em;
+  font-size: 0.875em;
+  line-height: 1.88571em;
 }
-@media (min-width: 35em) {
-  .comment, .comment--large {
-    font-size: 0.875em;
-    line-height: 1.71429em;
-  }
-}
-@media (min-width: 50em) {
+@media (min-width: 62.5em) {
   .comment, .comment--large {
     font-size: 1em;
-    line-height: 1.5em;
+    line-height: 1.8em;
   }
 }
 .comment p:last-child, .comment--large p:last-child {
@@ -2520,8 +2514,8 @@ input[type=text].form--story__button:hover,
   top: 0.48em;
   left: 0.4em;
   font-weight: 700;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-  opacity: 0.5;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
   font-size: 1.875em;
   line-height: 1.2em;
 }
@@ -2594,9 +2588,15 @@ input[type=text].form--story__button:hover,
 
 .header__title {
   font-weight: 300;
-  padding: 0.4em 0;
+  padding: 0.8em 0;
   font-size: 1.875em;
   line-height: 1.2em;
+}
+@media (min-width: 50em) {
+  .header__title {
+    font-size: 2.25em;
+    line-height: 1.33333em;
+  }
 }
 .header__title a {
   color: #333333;
@@ -2605,5 +2605,11 @@ input[type=text].form--story__button:hover,
 .header__logo {
   height: 3em;
   width: 3em;
-  padding: 0.375em 0 0;
+  padding: 1.05em 0 0;
+}
+@media (min-width: 50em) {
+  .header__logo {
+    height: 4.5em;
+    width: 4.5em;
+  }
 }

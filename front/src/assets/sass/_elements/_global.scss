@@ -42,10 +42,10 @@ html {
   -webkit-font-smoothing: antialiased;
   min-height: 100%;
   @include breakpoint($gte-medium) {
-    @include adjust-font-size-to($medium-font-size, 1.125);
+    @include adjust-font-size-to($medium-font-size, 1.25);
   }
   @include breakpoint($gte-large) {
-    @include adjust-font-size-to($large-font-size, 1.25);
+    @include adjust-font-size-to($large-font-size, 1.5);
   }
 }
 

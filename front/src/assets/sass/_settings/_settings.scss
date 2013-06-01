@@ -210,8 +210,8 @@ $form-legend-weight                : bold;
 $layout-prefix                     : "l";
 $layout-mod                        : "#{$layout-prefix}#{$mod}";
 $layout-el                         : "#{$layout-prefix}#{$el}";
-$layout-wrapper-max-width          : 42em;
-$layout-wrapper-min-ie-width       : 40em; // NOTE: old ie only
+$layout-wrapper-max-width          : 64em;
+$layout-wrapper-min-ie-width       : 50em; // NOTE: old ie only
 $layout-spacing-increments         : 0 1 2;
 $layout-spacing-sides              : top bottom left right;
 
