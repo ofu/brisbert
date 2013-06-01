@@ -20,6 +20,7 @@ figcaption,
 figure,
 footer,
 header,
+main,
 hgroup,
 nav,
 section,
@@ -39,6 +40,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
+  min-height: 100%;
   @include breakpoint($gte-medium) {
     @include adjust-font-size-to($medium-font-size, 1.25);
   }
@@ -49,6 +51,6 @@ html {
 
 body {
   margin: 0;
-  background: $color-body-background;
+  background: $color-bg;
   -webkit-overflow-scroll: touch;
 }

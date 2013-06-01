@@ -12,11 +12,9 @@ requires = [
     'transaction',
     'pyramid_tm',
     'pyramid_debugtoolbar',
-    'zope.sqlalchemy',
     'waitress',
     'pyramid_jinja2',
     'WebHelpers',
-    'psycopg2',
     ]
 
 setup(name='webapp',

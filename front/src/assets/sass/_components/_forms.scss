@@ -1,0 +1,31 @@
+.form--story {
+
+}
+
+// TODO: add form selection
+
+input[type=text].form--story__text {
+  background: transparent;
+  border: none;
+  padding: 0;
+  @include box-shadow(none);
+  @include inline-block;
+  width: auto;
+  margin: 0;
+  line-height: inherit;
+  color: $color-link;
+  border-bottom: 1px dashed $light-grey;
+}
+
+input[type=text].form--story__button,
+.form--story__button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  -webkit-appearance: none;
+  color: $color-link;
+  @include transition($default-transition);
+  &:hover {
+    color: $color-link-hover;
+  }
+}

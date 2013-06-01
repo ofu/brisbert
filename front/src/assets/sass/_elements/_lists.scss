@@ -1,3 +1,12 @@
+//
+// Lists Component - Default Settings
+// ----------------------------------
+// Change in _settings.scss
+
+$list-prefix : "list";
+$list-el     : #{$list-prefix}#{$el};
+$list-mod    : #{$list-prefix}#{$mod};
+
 /*
 
 ### Lists
@@ -57,3 +66,30 @@ ol {
 dd {
   margin: 0 0 0 rhythm(1);
 }
+
+
+/*
+
+#### List Block Links
+
+```
+<ul class="#{$list-mod}block-links">
+  <li><a href="#">Link</a></li>
+  <li><a href="#">Link</a></li>
+  <li><a href="#">Link</a></li>
+  <li><a href="#">Link</a></li>
+</ul>
+```
+
+*/
+
+.#{$list-mod}block-links {
+  li {
+    padding: 0;
+    > a {
+      display: block;
+      padding: rhythm(.5);
+    }
+  }
+}
+

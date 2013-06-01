@@ -2,11 +2,31 @@
 layout: home
 ---
 
-<ul class="list--no-bullets">
-  {% for post in site.posts limit: 5 %}
-    <li>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <div>posted in <a href="/{{ post.category }}">{{ post.category }}</a> on <span class="meta">{{ post.date | date_to_string }}</span></div>
-    </li>
-  {% endfor %}
-</ul>
+<p class="text-lead">BrisBert remembers <span>a year…</span></p>
+
+<form action="" class="form--story l--push-top-1">
+  <div class="comment--large">
+    <p>I remember it well, the year was </span><input class="form--story__text" type="text" value="1943"/>…</p>
+  </div>
+  <div class="l--push-top-1 text--align-right">
+    <input type="submit" class="form--story__button" value="continue rambling"/>
+  </div>
+</form>
+
+<div class="card l--push-bottom-1">
+  <h2 class="card__title">Pinapples</h2>
+  <div class="card__body">
+    <div class="card__image">
+      <img src="http://placehold.it/1200x600" alt="Test">
+    </div>
+    <div class="card__text l--pad-all-1">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus nisi et eros bibendum lacinia. Curabitur sed est nec urna pretium vulputate ut eget lectus. In ultricies, tellus non vehicula malesuada, augue sem aliquet tellus, ut faucibus turpis ante quis nibh. Ut vel turpis tortor, a consectetur ipsum. Sed posuere commodo vestibulum. Pellentesque volutpat diam sem.</p>
+    </div>
+    <div class="card__more text--align-right l--pad-h-1">
+      <a href="#">more about pineapple ></a>
+    </div>
+  </div>
+  <div class="comment l--push-v-1">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus nisi et eros bibendum lacinia. Curabitur sed est nec urna pretium vulputate ut eget lectus. In ultricies, tellus non vehicula malesuada, augue sem aliquet tellus, ut faucibus turpis ante quis nibh. Ut vel turpis tortor, a consectetur ipsum. Sed posuere commodo vestibulum. Pellentesque volutpat diam sem.
+  </div>
+</div>

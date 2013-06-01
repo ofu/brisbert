@@ -1,13 +1,31 @@
 {
+  "predef": [
+    "jQuery",
+    "exports",
+    "$",
+    "console"
+  ],
+
+  "bitwise": true,
+  "camelcase": true,
   "curly": true,
   "eqeqeq": true,
+  "forin": true,
   "immed": true,
-  "latedef": true,
+  "latedef": false,
   "newcap": true,
   "noarg": true,
-  "sub": true,
+  "noempty": true,
+  "nonew": true,
+  "plusplus": false,
+  "quotmark": "double",
   "undef": true,
-  "boss": true,
-  "eqnull": true,
-  "predef": ["exports"]
+  "unused": true,
+  "trailing": true,
+  "proto": true,
+  "sub": true,
+
+  "browser": true,
+
+  "onevar": true
 }

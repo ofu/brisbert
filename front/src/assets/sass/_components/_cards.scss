@@ -1,0 +1,38 @@
+.card {
+
+}
+
+.card__title {
+
+}
+
+.card__body {
+  background-color: $white;
+  @include box-shadow(0 1px 5px rgba($black, .1));
+}
+
+.card__image {
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 50%;
+  height: 0;
+  overflow: hidden;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.card__text {
+  p:last-child {
+    margin: 0;
+  }
+}
+
+.card__more {
+  background-color: $lightest-grey;
+  padding: rhythm(.25) rhythm(1);
+}
+

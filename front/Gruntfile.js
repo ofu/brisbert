@@ -19,30 +19,36 @@ module.exports = function(grunt) {
       gruntfile: {
         src: 'Gruntfile.js'
       },
-      assets: {
+      vendors: {
         options: {
           jshintrc: './src/assets/js/.jshintrc'
         },
-        src: ['./src/assets/js/**/*.js']
+        src: './src/assets/js/vendors/**/*.js'
       },
+      components: {
+        options: {
+          jshintrc: './src/assets/js/.jshintrc'
+        },
+        src: ['./src/assets/js/components/**/*.js', '!./src/assets/js/components/jquery.hammer.js']
+      }
     },
     concat: {
       options: {
         banner: '<%= banner %>',
         stripBanners: true
       },
-      dist: {
-        src: ['src/assets/js/vendors/*.js', 'src/assets/js/custom.js'],
-        dest: '_site/assets/js/script.js'
+      build: {
+        src: ['./src/assets/js/vendors/**/*.js', './src/assets/js/components/**/*.js'],
+        dest: './src/assets/js/script.js'
       }
     },
     uglify: {
       options: {
         banner: '<%= banner %>'
       },
-      dist: {
-        src: '<%= concat.dist.dest %>',
-        dest: '_site/assets/js/script.min.js'
+      build: {
+        src: '<%= concat.build.dest %>',
+        dest: './src/assets/js/script.min.js'
       },
     },
     compass: {
@@ -170,8 +176,12 @@ module.exports = function(grunt) {
     },
     shell: {
       jekyll: {
-          command: 'rm -rf _site/*; jekyll build',
-          stdout: false
+        command: 'rm -rf _site/*; jekyll build',
+        stdout: false
+      },
+      jsdelete: {
+        command: 'rm -rf _site/assets/js/*',
+        stdout: false
       },
     },
     connect: {
@@ -200,8 +210,8 @@ module.exports = function(grunt) {
         tasks: ['compass:dev', 'compass:styleguide', 'copy:css', 'copy:cssSg']
       },
       js: {
-        files: '<%= jshint.assets.src %>',
-        tasks: ['jshint:assets', 'concat', 'copy:js']
+        files: ['<%= jshint.vendors.src %>', '<%= jshint.components.src %>'],
+        tasks: ['jshint:components', 'concat', 'shell:jsdelete', 'copy:js']
       },
       jekyll: {
         files: ['src/**/*.html', 'src/**/*.md'],
@@ -234,7 +244,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-open');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'compass:clean', 'compass:styleguide', 'compass:prod', 'copy:cssSg', 'copy:css', 'shell:jekyll']);
+  grunt.registerTask('default', ['jshint:components', 'concat', 'uglify', 'compass:clean', 'compass:styleguide', 'compass:prod', 'copy:cssSg', 'copy:css', 'shell:jekyll']);
 
   // Watch and open server in browser
   grunt.registerTask('wo', ['connect', 'open:server', 'watch']);
