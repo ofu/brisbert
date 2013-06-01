@@ -1,0 +1,27 @@
+
+<!-- begins navbar -->
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+    
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+        {% for menu_item in menu %}
+          <li><a href="{{menu_item.url}}">{{menu_item.text}}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
+    
+      {% if auth_id is defined %}
+      <div class="nav-collapse collapse">        
+        <ul class="nav pull-right">
+          <li><a href="/admin/profile">{{auth_id}}</a></li>
+          <li><a href="/admin/logout" class="navbar-link">Logout</a></li>
+        </ul>
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+<!-- ends navbar -->

@@ -1,0 +1,29 @@
+{% macro list_from_pager(pager, onClickJs) %}
+    <ul>
+        {% if pager.page_count <= 1 %}
+            <li class="disabled"><a href="#">Prev</a></li>
+            <li class="disabled"><a href="#">1</a></li>
+            <li class="disabled"><a href="#">Next</a></li>
+        {% else %}
+            {% if pager.page == pager.first_page %}
+                <li class="disabled"><a href="#">Prev</a></li>
+                {% set fmt = "<li>~2~</li>\n<li>$link_next</li>" %}
+            {% elif pager.page == pager.last_page %}
+                {% set fmt = "<li>$link_previous</li>\n<li>~2~</li>" %}
+            {% else %}
+                {% set fmt = "<li>$link_previous</li>\n<li>~2~</li>\n<li>$link_next</li>" %}
+            {% endif %}
+
+            {{pager.pager(
+                format=fmt,
+                separator="</li>\n<li>",
+                symbol_previous="Prev",
+                symbol_next='Next',
+                onclick=onClickJs)}}
+
+            {% if pager.page == pager.last_page %}
+                <li class="disabled"><a href="#">Next</a></li>
+            {% endif %}
+        {% endif %}
+    </ul>
+{% endmacro %}
