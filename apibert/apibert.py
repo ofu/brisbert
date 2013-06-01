@@ -22,7 +22,7 @@ def _get_key(engine, name, key, value, num, request):
 
 
 @bottle.get('/brisbert/<search_key>')
-def data_view(search_key):
+def data_route(search_key):
     """ Returns for json data based on a search key, and parameters passed in 
     the GET request. The following GET parameters are parsed:
     
@@ -44,7 +44,7 @@ def data_view(search_key):
 
 
 @bottle.get('/brisbert/<database>/<id>')
-def database_id_view(database, id):
+def database_id_route(database, id):
     """ Returns a specific item based on an id
     """
     searches = engines.get_engines()
@@ -52,7 +52,13 @@ def database_id_view(database, id):
         return bottle.abort(400, 'Bad database: ' + database)
         
     return _get_key(searches[database], database, 'id', id, 1, request)
-    
+
+
+@bottle.get('/static/<filename:path>')
+def static_route(filename):
+    """Route for our static resources
+    """
+    return  bottle.static_file(filename, root='./static/')
                                             
 if __name__ == '__main__':
     bottle.run(host='localhost', port=8080, debug=True)
