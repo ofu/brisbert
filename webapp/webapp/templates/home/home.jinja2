@@ -6,19 +6,43 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row-fluid">
-        <div class="span12">
-            <h1>BrisBert WEBAPP</h1>
-          
-            <div class="row-fluid">
-                <div class="span12">
-                    <p>That's nothing, back in <em>my</em> day {{subject}} was...</p>
-                </div>
-            </div>        
-        </div>
+    <div class="l__wrapper l--push-v-2">
+      <p class="text-lead">BrisBert remembers <span>a year…</span></p>
+
+<form action="" class="form--story l--push-top-1">
+  <div class="comment--large">
+    <p>I remember it well, the year was </span><input class="form--story__text" type="text" value="{{year}}"/>…</p>
+  </div>
+  <div class="l--push-top-1 text--align-right">
+    <input type="submit" class="form--story__button" value="continue rambling"/>
+  </div>
+</form>
+
+{% for result in search_results.objects %}
+
+<div class="card l--push-bottom-1">
+  <h2 class="card__title">Bert Found!</h2>
+  <div class="card__body">
+    <div class="card__image">
+      <img src="http://placehold.it/1200x600" alt="Test">
     </div>
+    <div class="card__text l--pad-all-1">
+      <p>{{result.text}}</p>
+    </div>
+    <div class="card__more text--align-right l--pad-h-1">
+      <a href="#">more about pineapple ></a>
+    </div>
+  </div>
+  <div class="comment l--push-v-1">
+    {% for keyword in result.keyword %}
+      {{keyword}}
+    {% endfor %}
+  </div>
 </div>
 
-{% endblock %}
+{% endfor %}
 
+    </div>
+  
+  {% endblock %}
+  
