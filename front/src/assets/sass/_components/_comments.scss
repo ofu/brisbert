@@ -1,0 +1,31 @@
+$comment-color-bg: lighten($color-bg, 3%);
+
+.comment {
+  font-weight: 300;
+  @include opacity(.8);
+  @include adjust-font-size-to(12px);
+  @include breakpoint($gte-medium) {
+    @include adjust-font-size-to(14px);
+  }
+  @include breakpoint($gte-large) {
+    @include adjust-font-size-to(16px);
+  }
+}
+
+.comment--large {
+  @extend .comment;
+  @include adjust-font-size-to(20px);
+  position: relative;
+  &:before {
+    content: "e2809c";
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  @include breakpoint($gte-medium) {
+    @include adjust-font-size-to(24px);
+  }
+  @include breakpoint($gte-large) {
+    @include adjust-font-size-to(28px);
+  }
+}

@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   {% if page.layout == "home" %}
-    <title>{{ site.name }} | Site Desciption</title>
+    <title>{{ site.name }} | An old guys with a big mouth</title>
   {% else %}
     <title>{{ page.title }} | {{ site.name }}</title>
   {% endif %}
@@ -31,25 +31,39 @@
   <!--[if gt IE 8]><!-->
     <link rel="stylesheet" href="/assets/css/style.css">
   <!--<![endif]-->
+  <link href='http://fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
   <!--[if (lt IE 9) & (!IEMobile)]>
   <script src="js/vendor/selectivizr-min.js"></script>
   <![endif]-->
 
   <!-- JavaScript -->
-  <!-- TODO: Add modernizr here -->
-  <!-- <script src="js/vendor/<filename>.js"></script> -->
-  <script src="http://localhost:35729/livereload.js"></script>
+  <!-- TODO: Replace with minified url -->
+  <script src="/assets/js/script.js"></script>
 
 </head>
 
-<body>
-  <header role="banner" class="l--push--v-2">
-    <div class="l__wrapper">
-      {% if page.layout == "home" %}
-      <h1 class="gamma"><a href="/">{{ site.name }}</a></h1>
-      {% else %}
-      <h2 class="gamma"><a href="/">{{ site.name }}</a></h2>
-      {% endif %}
-    </div>
-  </header>
+<body class="off-canvas__outer">
+  <div class="off-canvas__target off-canvas--left" id="off-canvas--left" data-off-canvas="under">
+    <header class="off-canvas__header">
+      <a href="#off-canvas--left" class="off-canvas__close"><span class="is-invisible">Close</span></a>
+    </header>
+    <nav class="list--slat list--block-links">
+      <ul>
+        <li><a href="#">Item</a></li>
+        <li><a href="#">Item</a></li>
+        <li><a href="#">Item</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="off-canvas__inner">
+    <header role="banner" class="header">
+      <div class="l__wrapper">
+        <a href="#off-canvas--left" class="off-canvas__toggle--left  l--float-left">Menu</a>
+        {% if page.layout == "home" %}
+        <h1 class="aplha header__title"><a href="/">{{ site.name }}</a></h1>
+        {% else %}
+        <h2 class="alpha header__title"><a href="/">{{ site.name }}</a></h2>
+        {% endif %}
+      </div>
+    </header>

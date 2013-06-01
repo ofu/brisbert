@@ -1,0 +1,171 @@
+//
+// Off Canvas Component - Default Settings
+// ----------------------------------
+// Change in _settings.scss
+
+$offcanvas-outer-bg-color : $color-base-font !default;
+$offcanvas-inner-bg-color : $color-bg !default;
+$offcanvas-target-width   : 11 !default;
+
+.off-canvas__outer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: $offcanvas-outer-bg-color;
+}
+
+.off-canvas__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: $offcanvas-inner-bg-color;
+  @include transition($default-transition);
+  .off-canvas--left-under & {
+    .no-csstransforms3d & {
+      left: rhythm($offcanvas-target-width);
+    }
+    .csstransforms3d & {
+      @include transform3d(translate3d(rhythm($offcanvas-target-width),0,0));
+    }
+  }
+  .off-canvas--right-under & {
+    .no-csstransforms3d & {
+      right: rhythm($offcanvas-target-width);
+    }
+    .csstransforms3d & {
+      @include transform3d(translate3d(- rhythm($offcanvas-target-width),0,0));
+    }
+  }
+}
+
+.off-canvas__toggle {
+  @include adjust-font-size-to(24px, 1);
+  @include inline-block;
+  padding: rhythm(.5, 24px);
+  text-align: center;
+  height: rhythm(2, 24px);
+  width: rhythm(2, 24px);
+  &.is-active {
+    color: $offcanvas-outer-bg-color;
+  }
+}
+
+.off-canvas__toggle--left {
+  @extend .off-canvas__toggle;
+  border-right: 1px solid $light-grey;
+}
+
+.off-canvas__toggle--right {
+  @extend .off-canvas__toggle;
+  border-left: 1px solid $light-grey;
+}
+
+.off-canvas__header {
+  background-color: lighten($offcanvas-outer-bg-color, 10%);
+  height: rhythm(2);
+  @include box-shadow($default-box-shadow);
+  [data-off-canvas=over] & {
+    background-color: lighten($offcanvas-inner-bg-color, 10%);
+  }
+}
+
+%off-canvas__target {
+  width: rhythm($offcanvas-target-width);
+  background-color: $offcanvas-outer-bg-color;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  @include transition($default-transition);
+  @include box-shadow(inset 0 0 8px rgba($black, .2));
+  &[data-off-canvas=over] {
+    background-color: $white;
+    @include box-shadow(0 2px 8px rgba($black,.2));
+    z-index: 2;
+  }
+}
+
+.off-canvas--left {
+  @extend %off-canvas__target;
+  &[data-off-canvas=over] {
+    left: - rhythm($offcanvas-target-width);
+    .js & {
+      left: 0;
+    }
+    .no-csstransforms3d & {
+      left: - rhythm($offcanvas-target-width);
+    }
+    .csstransforms3d & {
+      @include transform3d(translate3d(rhythm(- $offcanvas-target-width),0,0));
+    }
+    .off-canvas--left-over & {
+      .no-csstransforms3d & {
+        left: 0;
+      }
+      .csstransforms3d & {
+        @include transform3d(translate3d(0,0,0));
+      }
+    }
+  }
+}
+
+.off-canvas--right {
+  @extend %off-canvas__target;
+  right: - rhythm($offcanvas-target-width);
+  .js & {
+    right: 0;
+  }
+  .no-csstransforms3d & {
+    right: - rhythm($offcanvas-target-width);
+  }
+  .csstransforms3d & {
+    @include transform3d(translate3d(rhythm($offcanvas-target-width),0,0));
+  }
+  .off-canvas--right-over & {
+    .no-csstransforms3d & {
+      right: rhythm($offcanvas-target-width);
+    }
+    .csstransforms3d & {
+      @include transform3d(translate3d(0,0,0));
+    }
+  }
+  @include breakpoint($gte-huge) {
+    .off-canvas--right-under & {
+      .no-csstransforms3d & {
+        right: rhythm($offcanvas-target-width);
+      }
+      .csstransforms3d & {
+        @include transform3d(translate3d(0,0,0));
+      }
+    }
+  }
+}
+
+.off-canvas__close {
+  @extend .off-canvas__toggle;
+  @include adjust-font-size-to(24px, 1);
+  margin: rhythm(.5, 24px) rhythm(.5, 24px);
+  padding: 0;
+  width: rhythm(1, 24px);
+  height: rhythm(1, 24px);
+  border-radius: 50%;
+  background-color: lighten($offcanvas-outer-bg-color, 30%);
+  color: lighten($offcanvas-outer-bg-color, 10%);
+  float: right;
+  &:hover {
+    background-color: lighten($offcanvas-outer-bg-color, 35%);
+    color: $offcanvas-outer-bg-color;
+  }
+  .off-canvas--left & {
+    float: left;
+  }
+  [data-off-canvas=over] & {
+    background-color: darken($offcanvas-inner-bg-color, 7%);
+    color: lighten($offcanvas-inner-bg-color, 5%);
+    &:hover {
+      background-color: darken($offcanvas-inner-bg-color, 15%);
+      color: lighten($offcanvas-inner-bg-color, 10%);
+    }
+  }
+}

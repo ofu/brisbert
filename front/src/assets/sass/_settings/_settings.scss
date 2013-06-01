@@ -63,14 +63,14 @@ $default-transition                : 0.2s ease-out;
 //
 // Colors Global
 // -------------
+//
 
-$color-primary                     : #5c9;
-$color-secondary                   : #9c9;
-$color-tertiary                    : #374;
-$color-base-font                   : #171717;
+$color-primary                     : lighten(#046D8B, 5%);
+$color-secondary                   : #ECBE13;
+$color-tertiary                    : #F2DCAA;
+$color-base-font                   : #333;
 $color-base-heading                : $color-base-font;
-$color-body-background             : #fcfcfc;
-$color-main-background             : $white;
+$color-bg                          : lighten($color-tertiary, 14%);
 $color-link                        : $color-primary;
 $color-link-hover                  : darken($color-link, 15);
 $color-link-active                 : darken($color-link, 40);
@@ -86,8 +86,8 @@ $color-error                       : lighten(red, 35);
 
 // Base font size and line height set in - Compass - Vertical Rhythm
 
-$font-family-base                  : 'Minion Pro', $font-serif;
-$font-family-heading               : 'Brandon Grotesque', $font-sans-serif;
+$font-family-base                  : 'Merriweather', $font-serif;
+$font-family-heading               : 'Merriweather', $font-serif;
 
 //
 // Vendor Variables
