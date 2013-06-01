@@ -30,3 +30,17 @@ with transaction.manager:
             item.credit = u'%s' % row[10]
             item.comment = u'%s' % row[11]
             models.add_collection_item(collection, item)
+
+with transaction.manager:
+    with open('external_data/myouseum150-photos.csv', 'rb') as csvfile:
+        reader = csv.reader(csvfile, delimiter=',')
+        for row in reader:        
+            photo = models.Photo()
+            photo.id = u'%s' % row[0]
+            photo.object_name = u'%s' % row[1]
+            photo.scientific_name = u'%s' % row[2]
+            photo.story = u'%s' % row[3]
+            photo.vernon_id = u'%s' % row[4]
+            photo.qm_filename = u'%s' % row[5]
+            photo.credit = u'%s' % row[6]
+            models.add_photo(photo)

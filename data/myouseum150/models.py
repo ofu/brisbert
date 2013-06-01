@@ -38,6 +38,16 @@ class CollectionItem(common.Base):
     collections_id = Column(Integer, ForeignKey(Collection.id), nullable=False)    
 
 
+class Photo(common.Base):
+    __tablename__ = 'myouseum150_photo'
+    id = Column(Integer, primary_key=True)
+    object_name = Column(Unicode(64))
+    scientific_name = Column(Unicode(64))
+    story = Column(Unicode(1024))
+    vernon_id = Column(Unicode(32))
+    qm_filename = Column(Unicode(64))
+    credit = Column(Unicode(64))
+
 def add_collection(collection):
     """
     Used initially just to import data from csv into sqlite
@@ -57,3 +67,10 @@ def add_collection_item(collection, collection_item):
     session = common.DBSession()
     collection_item.collections_id = collection.id
     session.add(collection_item)
+
+def add_photo(photo):
+    """
+    Used initially just to import data from csv into sqlite
+    """
+    session = common.DBSession()
+    session.add(photo)
