@@ -1,5 +1,6 @@
 import bottle
 import engines
+import random
 
 """ Set of keys useable by the rest api
 """
@@ -18,7 +19,7 @@ def _get_key(engine, name, key, value, num, request):
     for obj in retval:
         obj.setdefault('database', name)
         
-    return {'objects': retval}
+    return retval
 
 
 @bottle.get('/brisbert/<search_key>')
@@ -37,10 +38,15 @@ def data_route(search_key):
         if required not in bottle.request.query:
             return bottle.abort(400, "Missing param: " + required)
     
-    searches = engines.get_engines()
-    return _get_key(searches['dummy'], 'dummy', search_key, 
-                    bottle.request.query['value'], 
-                    int(bottle.request.query['num']), bottle.request)
+    engine_list = engines.get_engines()
+    
+    objs = []
+    for engine in engine_list.iteritems():
+        objs.extend(_get_key(engine[1], engine[0], search_key, 
+                             bottle.request.query['value'], 
+                             int(bottle.request.query['num']), bottle.request))
+    random.shuffle(objs)
+    return { 'objects': objs[:int(bottle.request.query['num'])] }
 
 
 @bottle.get('/brisbert/<database>/<id>')
