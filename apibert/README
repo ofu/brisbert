@@ -1,7 +1,9 @@
 README
 ------
 
-To get the apibert up and running simply run:
+This directory contains the RESTful API used to access the data brisbert uses. 
+To run the api (see the bottom of the script for details on port and address) , 
+simply run:
 
 python apibert
 
