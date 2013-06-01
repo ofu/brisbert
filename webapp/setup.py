@@ -16,6 +16,7 @@ requires = [
     'pyramid_jinja2',
     'WebHelpers',
     'requests',
+    'zope.sqlalchemy',
     ]
 
 setup(name='webapp',
