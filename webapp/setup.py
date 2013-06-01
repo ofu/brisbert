@@ -15,6 +15,7 @@ requires = [
     'waitress',
     'pyramid_jinja2',
     'WebHelpers',
+    'requests',
     ]
 
 setup(name='webapp',
