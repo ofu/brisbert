@@ -839,7 +839,7 @@ These are components that can be utilised or are depended on by other components
 </div>
 
 */
-.l--clearfix {
+.l--clearfix, .l__wrapper {
   overflow: hidden;
   *zoom: 1;
 }
@@ -882,11 +882,11 @@ $max-site-width is assigned to this
 
 */
 .l__wrapper {
-  max-width: 48em;
+  max-width: 42em;
   margin-left: auto;
   margin-right: auto;
   padding: 0 1.5em;
-  min-width: 44em;
+  min-width: 40em;
 }
 
 /*
@@ -1685,7 +1685,7 @@ input[type=text].form--story__text {
   margin: 0;
   line-height: inherit;
   color: #0580a4;
-  border-bottom: 1px dashed #cccccc;
+  border-bottom: 2px dashed #cccccc;
 }
 
 input[type=text].form--story__button,
@@ -1902,22 +1902,46 @@ input[type=text].form--story__button:hover,
 
 .comment, .comment--large {
   font-weight: 300;
+  font-style: italic;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
   font-size: 0.75em;
   line-height: 2em;
+}
+.comment p:last-child, .comment--large p:last-child {
+  margin-bottom: 0;
 }
 
 .comment--large {
   font-size: 1.25em;
   line-height: 1.2em;
   position: relative;
+  padding: 1.2em 1.2em 1.2em 2.4em;
+  background-color: white;
 }
 .comment--large:before {
-  content: "e2809c";
+  content: "\201C";
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0.48em;
+  left: 0.4em;
+  font-weight: 700;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  font-size: 1.875em;
+  line-height: 1.2em;
+}
+.comment--large:after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  right: -14px;
+  position: absolute;
+  bottom: 10px;
+  border-style: solid;
+  border-width: 24px 0 24px 41.52px;
+  font-size: 1em;
+  line-height: 1.5em;
+  border-color: transparent transparent transparent white;
 }
 
 .card__body {
@@ -1955,8 +1979,17 @@ input[type=text].form--story__button:hover,
 }
 
 .header__title {
-  text-align: center;
+  font-weight: 300;
+  padding: 0.4em 0;
+  font-size: 1.875em;
+  line-height: 1.2em;
 }
 .header__title a {
   color: #333333;
+}
+
+.header__logo {
+  height: 3em;
+  width: 3em;
+  padding: 0.375em 0 0;
 }

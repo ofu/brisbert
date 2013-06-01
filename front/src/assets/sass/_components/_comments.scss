@@ -2,6 +2,7 @@ $comment-color-bg: lighten($color-bg, 3%);
 
 .comment {
   font-weight: 300;
+  font-style: italic;
   @include opacity(.8);
   @include adjust-font-size-to(12px);
   @include breakpoint($gte-medium) {
@@ -10,22 +11,47 @@ $comment-color-bg: lighten($color-bg, 3%);
   @include breakpoint($gte-large) {
     @include adjust-font-size-to(16px);
   }
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .comment--large {
   @extend .comment;
   @include adjust-font-size-to(20px);
   position: relative;
+  padding: rhythm(1, 20px) rhythm(1, 20px) rhythm(1, 20px) rhythm(2, 20px);
+  background-color: $white;
   &:before {
-    content: "e2809c";
+    content: "\201C";
     position: absolute;
-    top: 0;
-    left: 0;
+    top: rhythm(.6, 30px);
+    left: rhythm(.5, 30px);
+    font-weight: 700;
+    @include opacity(.5);
+    @include adjust-font-size-to(30px);
+  }
+  &:after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    right: -14px;
+    position: absolute;
+    bottom: 10px;
+    border-style: solid;
+    border-width: 24px 0 24px 41.52px;
+    @include adjust-font-size-to(16px);
+    border-color: transparent transparent transparent $white;
+    @include breakpoint($gte-medium) {
+      right: -28px;
+    }
   }
   @include breakpoint($gte-medium) {
-    @include adjust-font-size-to(24px);
+    @include adjust-font-size-to(22px);
+    padding: rhythm(1, 24px) rhythm(1, 24px) rhythm(1, 24px) rhythm(3, 24px);
   }
   @include breakpoint($gte-large) {
-    @include adjust-font-size-to(28px);
+    @include adjust-font-size-to(24px);
+    padding: rhythm(1, 28px) rhythm(1, 28px) rhythm(1, 28px) rhythm(3, 28px);
   }
 }

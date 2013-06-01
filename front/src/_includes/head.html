@@ -59,11 +59,12 @@
   <div class="off-canvas__inner">
     <header role="banner" class="header">
       <div class="l__wrapper">
-        <a href="#off-canvas--left" class="off-canvas__toggle--left  l--float-left">Menu</a>
+        <!-- <a href="#off-canvas--left" class="off-canvas__toggle--left  l--float-left">Menu</a> -->
         {% if page.layout == "home" %}
-        <h1 class="aplha header__title"><a href="/">{{ site.name }}</a></h1>
+        <h1 class="beta header__title l--float-left"><a href="/">{{ site.name }}</a></h1>
         {% else %}
-        <h2 class="alpha header__title"><a href="/">{{ site.name }}</a></h2>
+        <h2 class="beta header__title l--float-left"><a href="/">{{ site.name }}</a></h2>
         {% endif %}
+        <div class="l--float-right header__logo"><img src="assets/img/logo.svg" alt="BrisBert Logo"></div>
       </div>
     </header>
