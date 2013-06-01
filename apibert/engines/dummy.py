@@ -3,7 +3,7 @@
 fields are required, all the rest are optional
 """
 default_ = { 'id': 100, 
-             'keyword': 'pineapple onion belt',
+             'keyword': ['pineapple', 'onion', 'belt'],
              'date': '10-12-2009',
              'text': 'Crazy optional text',
              'url' : '/static/dummy/01.jpg' }
@@ -17,7 +17,7 @@ class Dummy(object):
         keyword in the dict.
         """
         retval = dict(default_)
-        retval['keyword'] = value
+        retval['keyword'].append(value)
         return [ retval ]
 
     def date(self, value, num, request):
