@@ -70,5 +70,5 @@ class CollectionItemEngine(object):
     def _format_photo(self, item):
         url = ''
         if item.photo_id is not None:
-            url = '/static/myouseum/%s.jpg' % item.photo_id
+            url = '/assets/myouseum/%s.jpg' % item.photo_id
         return url

@@ -6,7 +6,15 @@
 
 {% block content %}
 
+
     <div class="l__wrapper l--push-v-2">
+
+    <form id="form" method="POST" class="form-search" action="/">
+        <h3>Bert Search</h3>
+        <input type="text" class="input-medium search-query" placeholder="grumpy old man" name="search_query">
+        <button id="find_button" type="submit" class="btn">Search</button>
+    </form>
+
       <p class="text-lead">BrisBert remembers <span>a year…</span></p>
 
 <form action="" class="form--story l--push-top-1">
@@ -21,10 +29,10 @@
 {% for result in search_results.objects %}
 
 <div class="card l--push-bottom-1">
-  <h2 class="card__title">Bert Found!</h2>
+  <h2 class="card__title">{{result.db_desc}}</h2>
   <div class="card__body">
     <div class="card__image">
-      <img src="http://placehold.it/1200x600" alt="Test">
+      <img src="{{result.url}}" alt="Test">
     </div>
     <div class="card__text l--pad-all-1">
       <p>{{result.text}}</p>
