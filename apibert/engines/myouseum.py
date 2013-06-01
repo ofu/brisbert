@@ -1,8 +1,12 @@
 import data.myouseum.models as myouseum
+import data.common as common
 
 class CollectionItemEngine(object):
     """ myouseum engine class, returns a dict object for the myouseum150 collections
     """
+
+    def __init__(self):
+        common.init('sqlite:///bert.sqlite')
 
     def keyword(self, value, num, request):
         """ Returns at most num dict objects, as an iterable, with keyword as a 
@@ -39,20 +43,20 @@ class CollectionItemEngine(object):
         }
 
     def _format_keywords(self, item):
-        keywords = []
-        keywords.append(_to_keywords(item.collection.title))
-        keywords.append(_to_keywords(item.collection.description))
-        keywords.append(_to_keywords(item.object_name))
-        keywords.append(_to_keywords(item.scientific_name))
-        keywords.append(_to_keywords(item.story))
-        keywords.append(_to_keywords(item.credit))
-        keywords.append(_to_keywords(item.comment))
-        return keywords
+        keywords = set()
+        keywords |= self._to_keywords(item.collection.title)
+        keywords |= self._to_keywords(item.collection.description)
+        keywords |= self._to_keywords(item.object_name)
+        keywords |= self._to_keywords(item.scientific_name)
+        keywords |= self._to_keywords(item.story)
+        keywords |= self._to_keywords(item.credit)
+        keywords |= self._to_keywords(item.comment)
+        return list(keywords)
 
     def _format_text(self, item):
-        return item.story
+        return '%s %s %s' % (item.collection.title, item.collection.description, item.story)
 
-    def _format_keywords(self, text):
+    def _to_keywords(self, text):
         keywords = set()
         l = text.split(' ');
         for s in l:
@@ -61,7 +65,7 @@ class CollectionItemEngine(object):
         return keywords
 
     def _format_date(self, item):
-        return item.date.date.year
+        return item.collection.year
 
     def _format_photo(self, item):
         url = ''

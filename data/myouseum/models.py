@@ -72,11 +72,11 @@ def add_photo(photo):
 def get_items_by_keywords(value, num):
     session = common.DBSession()
     query = session.query(CollectionItem)
-    query = query.filter(CollectionItem.story.like(str))
+    query = query.filter(CollectionItem.story.like('%' + value + '%'))
     query = query.limit(num)
     return query.all()
 
-def get_items_by_keywords(value, num):
+def get_items_by_date(value, num):
     session = common.DBSession()
     query = session.query(Collection)
     query = query.filter_by(Collection.year == int(value))
