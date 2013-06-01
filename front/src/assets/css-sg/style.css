@@ -2064,6 +2064,25 @@ Centered grids align grid items centrally without needing to use push or pull cl
   text-align: right;
 }
 
+.text--meta {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  -webkit-transition: 0.2s ease-out;
+  -moz-transition: 0.2s ease-out;
+  -o-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+  font-size: 0.75em;
+  line-height: 2em;
+  background: url('/img/rgbapng/0000000d.png?1370088420');
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.25em 0.5em;
+  margin-bottom: 1em;
+}
+.text--meta:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
 .text--align-center {
   text-align: center;
 }
@@ -2483,7 +2502,7 @@ input[type=text].form--story__button:hover,
   color: white;
 }
 
-.comment, .comment--large {
+.comment {
   font-weight: 300;
   font-style: italic;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
@@ -2492,34 +2511,34 @@ input[type=text].form--story__button:hover,
   line-height: 1.88571em;
 }
 @media (min-width: 62.5em) {
-  .comment, .comment--large {
+  .comment {
     font-size: 1em;
     line-height: 1.8em;
   }
 }
-.comment p:last-child, .comment--large p:last-child {
+.comment p:last-child {
   margin-bottom: 0;
 }
 
-.comment--large {
-  font-size: 1.25em;
-  line-height: 1.2em;
+.comment--medium, .comment--large {
+  font-weight: 300;
+  font-style: italic;
   position: relative;
-  padding: 1.2em 1.2em 1.2em 2.4em;
+  padding: 1.5em 1.5em 1.5em 3em;
   background-color: white;
 }
-.comment--large:before {
+.comment--medium:before, .comment--large:before {
   content: "\201C";
   position: absolute;
-  top: 0.48em;
-  left: 0.4em;
+  top: 0.68em;
+  left: 0.5em;
   font-weight: 700;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
   opacity: 0.2;
-  font-size: 1.875em;
-  line-height: 1.2em;
+  font-size: 2.5em;
+  line-height: 0.9em;
 }
-.comment--large:after {
+.comment--medium:after, .comment--large:after {
   content: "";
   width: 0px;
   height: 0px;
@@ -2533,9 +2552,36 @@ input[type=text].form--story__button:hover,
   border-color: transparent transparent transparent white;
 }
 @media (min-width: 35em) {
-  .comment--large:after {
+  .comment--medium:after, .comment--large:after {
     right: -28px;
   }
+}
+@media (min-width: 35em) {
+  .comment--medium, .comment--large {
+    padding: 1.33333em 1.33333em 1.33333em 4em;
+  }
+}
+@media (min-width: 50em) {
+  .comment--medium, .comment--large {
+    padding: 1.2em 1.2em 1.2em 3.6em;
+  }
+}
+.comment--medium p:last-child, .comment--large p:last-child {
+  margin-bottom: 0;
+}
+
+.comment--large {
+  font-size: 1.25em;
+  line-height: 1.2em;
+  padding: 1.2em 1.2em 1.2em 2.4em;
+}
+.comment--large:before {
+  top: 0.48em;
+  left: 0.4em;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+  font-size: 1.875em;
+  line-height: 1.2em;
 }
 @media (min-width: 35em) {
   .comment--large {
@@ -2557,6 +2603,7 @@ input[type=text].form--story__button:hover,
   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .card__image {
@@ -2571,6 +2618,13 @@ input[type=text].form--story__button:hover,
   top: 0;
   left: 0;
   width: 100%;
+}
+@media (min-width: 50em) {
+  .card__image {
+    overflow: visible;
+    height: auto;
+    padding: 0;
+  }
 }
 
 .card__text p:last-child {

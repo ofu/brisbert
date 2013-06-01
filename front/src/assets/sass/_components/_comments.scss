@@ -13,20 +13,20 @@ $comment-color-bg: lighten($color-bg, 3%);
   }
 }
 
-.comment--large {
-  @extend .comment;
-  @include adjust-font-size-to(20px);
+.comment--medium {
+  font-weight: 300;
+  font-style: italic;
   position: relative;
-  padding: rhythm(1, 20px) rhythm(1, 20px) rhythm(1, 20px) rhythm(2, 20px);
+  padding: rhythm(1, $base-font-size) rhythm(1, $base-font-size) rhythm(1, $base-font-size) rhythm(2, $base-font-size);
   background-color: $white;
   &:before {
     content: "\201C";
     position: absolute;
-    top: rhythm(.6, 30px);
-    left: rhythm(.5, 30px);
+    top: rhythm(1.8, 40px, $base-font-size);
+    left: rhythm(1.5, 40px, $base-font-size);
     font-weight: 700;
     @include opacity(.2);
-    @include adjust-font-size-to(30px);
+    @include adjust-font-size-to(40px, 1.5, $base-font-size);
   }
   &:after {
     content: "";
@@ -42,6 +42,27 @@ $comment-color-bg: lighten($color-bg, 3%);
     @include breakpoint($gte-medium) {
       right: -28px;
     }
+  }
+  @include breakpoint($gte-medium) {
+    padding: rhythm(1, $medium-font-size) rhythm(1, $medium-font-size) rhythm(1, $medium-font-size) rhythm(3, $medium-font-size);
+  }
+  @include breakpoint($gte-large) {
+    padding: rhythm(1, $large-font-size) rhythm(1, $large-font-size) rhythm(1, $large-font-size) rhythm(3, $large-font-size);
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.comment--large {
+  @extend .comment--medium;
+  @include adjust-font-size-to(20px);
+  padding: rhythm(1, 20px) rhythm(1, 20px) rhythm(1, 20px) rhythm(2, 20px);
+  &:before {
+    top: rhythm(.6, 30px);
+    left: rhythm(.5, 30px);
+    @include opacity(.2);
+    @include adjust-font-size-to(30px);
   }
   @include breakpoint($gte-medium) {
     @include adjust-font-size-to(22px);

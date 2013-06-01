@@ -9,6 +9,7 @@
 .card__body {
   background-color: $white;
   @include box-shadow(0 1px 5px rgba($black, .1));
+  overflow: hidden;
 }
 
 .card__image {
@@ -22,6 +23,11 @@
     top: 0;
     left: 0;
     width: 100%;
+  }
+  @include breakpoint($gte-large) {
+    overflow: visible;
+    height: auto;
+    padding: 0;
   }
 }
 
