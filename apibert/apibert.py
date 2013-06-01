@@ -17,7 +17,8 @@ def _get_key(engine, name, key, value, num, request):
     retval = getattr(engine, key)(value, num, request)
     for obj in retval:
         obj.setdefault('database', name)
-    return retval
+        
+    return {'objects': retval}
 
 
 @bottle.get('/brisbert/<search_key>')

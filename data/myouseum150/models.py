@@ -1,17 +1,10 @@
-
 from sqlalchemy import Column
 from sqlalchemy import Integer
 from sqlalchemy import DateTime
 from sqlalchemy import Unicode
-from sqlalchemy import Boolean
-from sqlalchemy import Binary
-from sqlalchemy import PickleType
-from sqlalchemy import Float
 from sqlalchemy import ForeignKey
-from sqlalchemy import create_engine
 from sqlalchemy.orm import relationship
 from sqlalchemy.orm import backref
-from datetime import datetime
 import data.common as common
 
 
