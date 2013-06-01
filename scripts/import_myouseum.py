@@ -1,11 +1,11 @@
 import sys
-from datetime import datetime
 sys.path.append('./')
 
+from datetime import datetime
 import transaction
 import csv
 import data.common as common
-import data.myouseum150.models as models
+import data.myouseum.models as models
 
 def to_unicode(s):
     try:
@@ -24,6 +24,7 @@ with transaction.manager:
             collection.title = to_unicode(row[1])
             collection.description = to_unicode(row[2])
             collection.date = datetime.strptime(row[3], '%Y-%m-%d %H:%M:%S')
+            collection.year = collection.date.year
             models.add_collection(collection)
 
             item = models.CollectionItem()

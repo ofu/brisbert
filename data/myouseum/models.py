@@ -14,6 +14,7 @@ class Collection(common.Base):
     title = Column(Unicode(64))
     description = Column(Unicode(64))
     date = Column(DateTime)
+    year = Column(Integer)
     items = relationship("CollectionItem", backref="collection", cascade="all,delete")
 
 
@@ -67,3 +68,17 @@ def add_photo(photo):
     """
     session = common.DBSession()
     session.add(photo)
+
+def get_items_by_keywords(value, num):
+    session = common.DBSession()
+    query = session.query(CollectionItem)
+    query = query.filter(CollectionItem.story.like(str))
+    query = query.limit(num)
+    return query.all()
+
+def get_items_by_keywords(value, num):
+    session = common.DBSession()
+    query = session.query(Collection)
+    query = query.filter_by(Collection.year == int(value))
+    query = query.limit(num)
+    return query.all()

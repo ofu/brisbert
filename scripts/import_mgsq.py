@@ -1,7 +1,7 @@
 import sys
-from datetime import datetime
 sys.path.append('./')
 
+from datetime import datetime
 import transaction
 import csv
 import data.common as common
