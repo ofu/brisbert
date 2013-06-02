@@ -71,13 +71,29 @@ def static_route(filename):
     """
     return  bottle.static_file(filename, root='./static/')
 
-@bottle.get('/speak')
-def database_bert_speak_to_me():
+@bottle.get('/speak/year')
+def database_bert_speak_to_me_year():
     """ Speak to me bert!
     """     
-    text = '%s. %s. %s.' % (bert.get_random_bert_speak(0).text, 
-        bert.get_random_bert_speak(1).text, bert.get_random_bert_speak(2).text)
-    return {'bert':text}
+    return {'bert':bert.get_random_bert_speak(0)}
+
+@bottle.get('/speak/short')
+def database_bert_speak_to_me_short():
+    """ Speak to me bert!
+    """     
+    return {'bert':bert.get_random_bert_speak(1)}
+
+@bottle.get('/speak/long')
+def database_bert_speak_to_me_long():
+    """ Speak to me bert!
+    """     
+    return {'bert':bert.get_random_bert_speak(2)}
+
+@bottle.get('/speak/random')
+def database_bert_speak_to_me_random():
+    """ Speak to me bert!
+    """     
+    return {'bert':bert.get_random_bert_speak(3)}
                                             
 if __name__ == '__main__':
     bottle.run(host='localhost', port=8080, debug=True)

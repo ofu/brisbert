@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="l--push-top-1 text--align-right">
-        <button id="find_button" type="submit" class="form--story__button">continue rambling</button>
+        <button id="find_button" type="submit" class="form--story__button">ramble</button>
       </div>
     </form>
   </div>
@@ -54,15 +54,8 @@
       </div>
     </div>
 
-    <div class="g l--push-v-1">
-      <div class="g__item w--two-thirds w--m-one-whole">
-        <div class="comment--medium">
-          {% for keyword in result.keyword %}
-            {{keyword}}
-          {% endfor %}
-        </div>
-      </div>
-    </div>
+  <form><input type="hidden" id="bert-annotate-{{loop.index0}}" value="{{get_kw(result.keywords)}}"></form>
+  <div class="bert-annotate"></div>
 
   {% endfor %}
 

@@ -5,7 +5,10 @@ $(document).ready(function() {
 });
 
 function reloadContent() {
-    $('#bert_speaks_year').load('/speak/year');
+    $('.bert-annotate').each(function(i){
+        kw = $('#bert-annotate-' + i);
+        $(this).load('/speak/' + i + '/long/' + kw.val());
+    });
 }
       
 </script>
