@@ -179,6 +179,7 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   min-height: 100%;
+  max-width: 100%;
 }
 @media (min-width: 35em) {
   html {
@@ -195,7 +196,8 @@ html {
 
 body {
   margin: 0;
-  background: black;
+  background: #333333;
+  max-width: 100%;
   -webkit-overflow-scroll: touch;
 }
 
@@ -919,7 +921,7 @@ $max-site-width is assigned to this
 
 */
 .l__wrapper {
-  max-width: 52em;
+  max-width: 45em;
   margin-left: auto;
   margin-right: auto;
   padding: 0 1.5em;
@@ -931,7 +933,7 @@ $max-site-width is assigned to this
 }
 @media (min-width: 55em) {
   .l__wrapper {
-    padding: 0 6em;
+    padding: 0 3em;
   }
 }
 
@@ -2337,7 +2339,7 @@ button.form--story__button:hover {
 }
 
 .emphasis--more-small {
-  background-color: #fefbf5;
+  background-color: white;
 }
 
 .emphasis--more-pop {
@@ -2347,13 +2349,14 @@ button.form--story__button:hover {
 }
 
 .emphasis--less {
-  background-color: black;
+  background-color: #262626;
 }
 
 .off-canvas__outer {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
   background-color: #333333;
 }
 
@@ -2362,7 +2365,7 @@ button.form--story__button:hover {
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: black;
+  background-color: #333333;
   -webkit-transition: 0.2s ease-out;
   -moz-transition: 0.2s ease-out;
   -o-transition: 0.2s ease-out;
@@ -2413,13 +2416,13 @@ button.form--story__button:hover {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 [data-off-canvas=over] .off-canvas__header {
-  background-color: #1a1a1a;
+  background-color: #4d4d4d;
 }
 
 .off-canvas__header__title {
   font-size: 1em;
   line-height: 3em;
-  color: black;
+  color: #1a1a1a;
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -2452,7 +2455,7 @@ button.form--story__button:hover {
   z-index: 2;
 }
 [data-off-canvas=under].off-canvas--left, [data-off-canvas=under].off-canvas--right {
-  color: black;
+  color: #333333;
 }
 
 .off-canvas__target__body {
@@ -2547,12 +2550,12 @@ button.form--story__button:hover {
   float: left;
 }
 [data-off-canvas=over] .off-canvas__close {
-  background-color: black;
-  color: #0d0d0d;
+  background-color: #212121;
+  color: #404040;
 }
 [data-off-canvas=over] .off-canvas__close:hover {
-  background-color: black;
-  color: #1a1a1a;
+  background-color: #0d0d0d;
+  color: #4d4d4d;
 }
 
 .comment {

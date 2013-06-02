@@ -70,7 +70,7 @@ $color-secondary                   : #ECBE13;
 $color-tertiary                    : #F2DCAA;
 $color-base-font                   : #333;
 $color-base-heading                : $color-base-font;
-$color-bg                          : #000;
+$color-bg                          : #333;
 $color-bg-light                    : lighten($color-tertiary, 14%);
 $color-link                        : $color-primary;
 $color-link-hover                  : darken($color-link, 15);
@@ -211,8 +211,8 @@ $form-legend-weight                : bold;
 $layout-prefix                     : "l";
 $layout-mod                        : "#{$layout-prefix}#{$mod}";
 $layout-el                         : "#{$layout-prefix}#{$el}";
-$layout-wrapper-max-width          : 52em;
-$layout-wrapper-min-ie-width       : 50em; // NOTE: old ie only
+$layout-wrapper-max-width          : 45em;
+$layout-wrapper-min-ie-width       : 44em; // NOTE: old ie only
 $layout-spacing-increments         : 0 1 2;
 $layout-spacing-sides              : top bottom left right;
 

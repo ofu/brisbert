@@ -11382,7 +11382,7 @@ $(function() {
 $(function() {
 
   var textBoxWidth = $(".form--story__text").val().length;
-  $(".form--story__text").width(textBoxWidth * 24 + "px");
+  $(".form--story__text").width(textBoxWidth * 20 + "px");
 
   $(".form--story__text").autoGrowInput({
       comfortZone: 20,

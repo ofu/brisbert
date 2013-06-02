@@ -77,7 +77,7 @@ $max-site-width is assigned to this
     padding: 0 $grid-padding;
   }
   @include breakpoint($gte-huge) {
-    padding: 0 $grid-padding * 2;
+    padding: 0 $grid-padding;
   }
   @include no-mqueries {
     min-width: $layout-wrapper-min-ie-width; // ? Sets a min-width in ie so it doesn't get too squashed
