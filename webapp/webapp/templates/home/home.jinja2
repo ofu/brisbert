@@ -11,10 +11,10 @@
   <div class="l--push-v-1">
     <form id="form" method="POST" class="form-search form--story" action="/">
 
-      <p class="text--lead">Remembers <span class="form--story__radio"><span class="form--story__radio__item"><input type="radio" name="context" value="year" checked><span class="form--story__radio__label">When</span></span> <span class="form--story__radio__divider">/</span> <span class="form--story__radio__item"><input type="radio" name="context" value="subject"><span class="form--story__radio__label">What</span></span></span>…</p>
       <div class="l--push-top-1">
         <div class="comment--large">
-          <p>I remember it well, the year was </span><input class="form--story__text search-query" type="text" value="1943" name="search_query"/>. I used to wear…</p>
+          <p>I remember it well, my favourite subject was </span><input class="form--story__text search-query" type="text" value="Brisbane" name="search_query"/>
+          </p>
         </div>
       </div>
       <div class="l--push-top-1 text--align-right">
@@ -23,6 +23,11 @@
     </form>
   </div>
 
+{% if twitter_feed %}
+  <a class="twitter-timeline" href="https://twitter.com/bewilderson" data-widget-id="341014295133425664">Tweets by @bewilderson</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+{% endif %}
+
 <!--   <form id="form" method="POST" class="form-search" action="/">
       <h3>Bert Search</h3>
       <input type="text" class="input-medium search-query" placeholder="grumpy old man" name="search_query">
@@ -30,11 +35,6 @@
   </form> -->
 
   <div class="l--push-bottom-2">
-    <div class="l--pad-v-1">
-      <div class="comment--large">
-        <p>I remember it well, the year was <strong>1943</strong>. We used to onions on our <a href="#">belts</a>, which was the style at the time.</p>
-      </div>
-    </div>
 
   {% for result in search_results.objects %}
 

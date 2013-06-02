@@ -3,16 +3,17 @@ import requests
 
 @view_config(route_name='home', renderer='templates/home/home.jinja2')
 def home(request):
-    search_query = ''
+    search_results = []
+    twitter_feed = True
     if 'search_query' in request.POST:
-        search_query = request.POST['search_query']
-    year = 2012
-    url = 'http://127.0.0.1:8080/brisbert/keyword'
-    r = requests.get(url, params={'value':search_query, 'num':'2'})
-    search_results = r.json()
-    print search_results
+        twitter_feed = False
+        search_query = request.POST['search_query']        
+        url = 'http://127.0.0.1:8080/brisbert/keyword'
+        r = requests.get(url, params={'value':search_query, 'num':'2'})
+        search_results = r.json()
+
     return {
         'subject': "robots",
-        'year': year,
-        'search_results': search_results
+        'search_results': search_results,
+        'twitter_feed': twitter_feed,
     }

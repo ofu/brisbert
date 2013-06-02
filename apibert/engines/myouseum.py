@@ -120,7 +120,7 @@ class CollectionPhotoEngine(object):
         return list(keywords)
 
     def _format_text(self, photo):
-        return '%s %s' % (photo.object_name, photo.story)
+        return photo.story
 
     def _format_date(self, photo):        
         return ''
