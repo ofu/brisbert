@@ -228,7 +228,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-open');
 
   // Default task.
-  grunt.registerTask('default', ['jshint:components', 'concat', 'uglify', 'compass:clean', 'compass:styleguide', 'compass:prod', 'copy:cssSg', 'copy:css', 'copy:images']);
+  grunt.registerTask('default', ['jshint:components', 'concat', 'uglify', 'compass:clean', 'compass:styleguide', 'compass:prod', 'copy:cssSg', 'copy:css', 'copy:images', 'shell:jsdelete', 'copy:js', 'copy:fonts']);
 
   // Watch and open server in browser
   grunt.registerTask('wo', ['open:server', 'watch']);

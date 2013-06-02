@@ -72,7 +72,7 @@ def add_photo(photo):
 def get_item_by_id(value):
     session = common.DBSession()
     query = session.query(CollectionItem)
-    query.filter_by(id=value)
+    query = query.filter_by(id=value)
     return query.first()    
 
 def get_items_by_keywords(value, num):

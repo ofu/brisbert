@@ -62,7 +62,7 @@ def database_id_route(database, id):
     if database not in searches:
         return bottle.abort(400, 'Bad database: ' + database)
         
-    return _get_key(searches[database], database, 'id', id, 1, request)
+    return { 'objects': _get_key(searches[database], database, 'id', id, 1, bottle.request) }
 
 
 @bottle.get('/static/<filename:path>')
@@ -71,40 +71,14 @@ def static_route(filename):
     """
     return  bottle.static_file(filename, root='./static/')
 
-
-def _bert_speak(fmt):
-    return {'bert':bert.get_random_bert_speak(fmt)}
-
-
-@bottle.get('/speak/year')
-def database_bert_speak_to_me():
-    """ Speak to me bert!
-    """ 
-    return _bert_speak(bert.format_year)        
-
-
-@bottle.get('/speak/short')
-def database_bert_speak_to_me():
-    """ Speak to me bert!    
-    """     
-    return _bert_speak(bert.format_short)        
-
-
-@bottle.get('/speak/long')
+@bottle.get('/speak')
 def database_bert_speak_to_me():
     """ Speak to me bert!
     """     
-    return _bert_speak(bert.format_long)        
-
-
-@bottle.get('/speak/random')
-def database_bert_speak_to_me():
-    """ Speak to me bert!
-    """     
-    return _bert_speak(bert.format_random)        
+    text = '%s. %s. %s.' % (bert.get_random_bert_speak(0).text, 
+        bert.get_random_bert_speak(1).text, bert.get_random_bert_speak(2).text)
+    return {'bert':text}
                                             
 if __name__ == '__main__':
     bottle.run(host='localhost', port=8080, debug=True)
-else:
-    application = bottle.default_app()
 

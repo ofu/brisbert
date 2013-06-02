@@ -8,22 +8,6 @@
 
 <main role="main">
 
-  <div id="bert_speaks_year">Bert says...</div>
-
-  <div class="l__wrapper l--push-v-1">
-    <form id="form" method="POST" class="form-search form--story" action="/">
-
-      <p class="text--lead">Remembers <span class="form--story__radio"><span class="form--story__radio__item"><input type="radio" name="context" value="year" checked><span class="form--story__radio__label">When</span></span> <span class="form--story__radio__divider">/</span> <span class="form--story__radio__item"><input type="radio" name="context" value="subject"><span class="form--story__radio__label">What</span></span></span>…</p>
-      <div class="l--push-top-1">
-        <div class="comment--large">
-          <p>I remember it well, the year was </span><input class="form--story__text search-query" type="text" value="1943" name="search_query"/>. I used to wear…</p>
-        </div>
-      </div>
-      <div class="l--push-top-1 text--align-right">
-        <button id="find_button" type="submit" class="form--story__button">continue rambling</button>
-      </div>
-    </form>
-  </div>
 
 <!--   <form id="form" method="POST" class="form-search" action="/">
       <h3>Bert Search</h3>
@@ -32,13 +16,6 @@
   </form> -->
 
   <div class="l__wrapper l--push-bottom-2">
-    <div class="l--push-v-1">
-      <div class="comment--large">
-        <p>I remember it well, the year was <strong>1943</strong>. We used to onions on our <a href="#">belts</a>, which was the style at the time.</p>
-      </div>
-    </div>
-
-  {% for result in search_results.objects %}
 
     <div class="g l--push-v-1">
       <div class="g__item w--two-thirds w--m-one-half">
@@ -73,8 +50,6 @@
         </div>
       </div>
     </div>
-
-  {% endfor %}
 
   </div>
 

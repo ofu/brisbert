@@ -8,6 +8,7 @@ def main(global_config, **settings):
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_route('home', '/')
     config.add_route('speak', '/speak/{cmd}')
+    config.add_route('item', '/{db}/{id}')
     config.include('pyramid_jinja2')
     config.scan('.views')
     return config.make_wsgi_app()
