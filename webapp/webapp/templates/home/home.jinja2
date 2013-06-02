@@ -8,49 +8,75 @@
 
 <main role="main">
 
-    <form id="form" method="POST" class="form-search" action="/">
-        <h3>Bert Search</h3>
-        <input type="text" class="input-medium search-query" placeholder="grumpy old man" name="search_query">
-        <button id="find_button" type="submit" class="btn">Search</button>
-    </form>
+  <div class="l__wrapper l--push-v-1">
+    <form id="form" method="POST" class="form-search form--story" action="/">
 
-    <div class="l__wrapper l--push-bottom-2">
-      <div class="l--push-v-1">
+      <p class="text--lead">Remembers <span class="form--story__radio"><span class="form--story__radio__item"><input type="radio" name="context" value="year" checked><span class="form--story__radio__label">When</span></span> <span class="form--story__radio__divider">/</span> <span class="form--story__radio__item"><input type="radio" name="context" value="subject"><span class="form--story__radio__label">What</span></span></span>…</p>
+      <div class="l--push-top-1">
         <div class="comment--large">
-          <p>I remember it well, the year was <strong>1943</strong>. We used to onions on our <a href="#">belts</a>, which was the style at the time.</p>
+          <p>I remember it well, the year was </span><input class="form--story__text search-query" type="text" value="1943" name="search_query"/>. I used to wear…</p>
         </div>
       </div>
+      <div class="l--push-top-1 text--align-right">
+        <button id="find_button" type="submit" class="form--story__button">continue rambling</button>
+      </div>
+    </form>
+  </div>
 
-    {% for result in search_results.objects %}
+<!--   <form id="form" method="POST" class="form-search" action="/">
+      <h3>Bert Search</h3>
+      <input type="text" class="input-medium search-query" placeholder="grumpy old man" name="search_query">
+      <button id="find_button" type="submit" class="btn">Search</button>
+  </form> -->
 
-      <div class="g l--push-v-1">
-        <div class="g__item w--two-thirds w--m-one-half">
-          <p>{{result.text}}</p>
+  <div class="l__wrapper l--push-bottom-2">
+    <div class="l--push-v-1">
+      <div class="comment--large">
+        <p>I remember it well, the year was <strong>1943</strong>. We used to onions on our <a href="#">belts</a>, which was the style at the time.</p>
+      </div>
+    </div>
+
+  {% for result in search_results.objects %}
+
+    <div class="g l--push-v-1">
+      <div class="g__item w--two-thirds w--m-one-half">
+      {% if result.text|count < 50 and result.url %}
+        <div class="media--image">
+          <img src="{{result.url}}" alt="Test">
         </div>
-        <div class="g__item w--one-third w--m-one-half">
-          <div class="text--meta">
-            <a href="#">{{result.db_desc}}</a>
-          </div>
+      {% else %}
+        <p>{{result.text}}</p>
+      {% endif %}
+      </div>
+      <div class="g__item w--one-third w--m-one-half">
+        <div class="text--meta">
+          <a href="#">{{result.db_desc}}</a>
+        </div>
+        {% if result.text|count >= 50 and result.url %}
           <div class="media--image">
             <img src="{{result.url}}" alt="Test">
           </div>
-        </div>
+        {% else %}
+          <p>{{result.text}}</p>
+        {% endif %}
       </div>
+    </div>
 
-      <div class="g -push-v-1">
-        <div class="g__item w--two-thirds w--m-one-whole">
-          <div class="comment--medium">
-            {% for keyword in result.keyword %}
-              {{keyword}}
-            {% endfor %}
-          </div>
+    <div class="g -push-v-1">
+      <div class="g__item w--two-thirds w--m-one-whole">
+        <div class="comment--medium">
+          {% for keyword in result.keyword %}
+            {{keyword}}
+          {% endfor %}
         </div>
       </div>
     </div>
 
-    {% endfor %}
+  {% endfor %}
+
+  </div>
 
 </main>
 
-  {% endblock %}
-  
+{% endblock %}
+
