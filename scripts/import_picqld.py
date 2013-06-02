@@ -37,10 +37,16 @@ def _get_text_node(el):
     return retval
     
     
-def _get_string(dom, element):
+def _get_string(dom, element, joiner=' '):
     retval = ''
     for el in dom.getElementsByTagName(element):
-        retval += _get_text_node(el)
+        str = _get_text_node(el)
+        if len(str):
+            if len(retval):
+                retval += joiner + str
+            else:
+                retval += str
+
     return retval
 
 
@@ -63,7 +69,7 @@ def _get_url(dom, search):
             return match.group(1)
     return None
 
-common.init('sqlite:///test.sqlite')
+common.init('sqlite:///bert.sqlite')
 
 with transaction.manager:
     dom = _read_dom('NASLA_non_ATSI_copyright_expired.xml')
@@ -76,6 +82,7 @@ with transaction.manager:
         picture = models.Picture()
         picture.title = _get_string(dc, 'dc:title')
         picture.description = _get_string(dc, 'dc:description')
+        picture.subjects = _get_string(dc, 'dc:subject')
         picture.year = _get_year(dc)
         picture.small_url = _get_url(dc, small_image_search_)
         picture.large_url = _get_url(dc, large_image_search_)
