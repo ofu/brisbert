@@ -47,10 +47,8 @@ $text-mod    : #{$text-prefix}#{$mod};
 .#{$text-mod}meta {
   @include opacity(.5);
   @include transition($default-transition);
-  @include adjust-font-size-to(12px);
-  @include rgba-background(rgba($black, .05));
-  padding: rhythm(.125, 12px) rhythm(.25, 12px);
-  margin-bottom: rhythm(.5, 12px);
+  @include adjust-font-size-to(10px);
+  @include ellipsis;
   &:hover {
     @include opacity(1);
   }
@@ -58,4 +56,10 @@ $text-mod    : #{$text-prefix}#{$mod};
 
 .#{$text-mod}align-center {
   text-align: center;
+}
+
+.#{$text-mod}para-margin {
+  p:last-child {
+    margin-bottom: 0;
+  }
 }

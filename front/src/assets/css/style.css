@@ -2368,22 +2368,28 @@ Centered grids align grid items centrally without needing to use push or pull cl
   -moz-transition: 0.2s ease-out;
   -o-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
-  font-size: 0.75em;
-  line-height: 2em;
-  background: url('/img/rgbapng/0000000d.png?1370088420');
-  background: rgba(0, 0, 0, 0.05);
-  padding: 0.25em 0.5em;
-  margin-bottom: 1em;
+  font-size: 0.625em;
+  line-height: 2.4em;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_text\.scss}line{font-family:\0000354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_text\.scss}line{font-family:\0000352}}
 .text--meta:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_text\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_text\.scss}line{font-family:\0000357}}
 .text--align-center {
   text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_text\.scss}line{font-family:\0000362}}
+.text--para-margin p:last-child {
+  margin-bottom: 0;
 }
 
 /*
@@ -2945,22 +2951,9 @@ button.form--story__button:hover {
   font-weight: 300;
   font-style: italic;
   position: relative;
-  padding: 1.5em 1.5em 1.5em 3em;
   background-color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000322}}
-.comment--medium:before, .comment--large:before {
-  content: "\201C";
-  position: absolute;
-  top: 0.68em;
-  left: 0.5em;
-  font-weight: 700;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
-  opacity: 0.2;
-  font-size: 2.5em;
-  line-height: 0.9em;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000321}}
 .comment--medium:after, .comment--large:after {
   content: "";
   width: 0px;
@@ -2975,45 +2968,36 @@ button.form--story__button:hover {
   border-color: transparent transparent transparent white;
 }
 @media (min-width: 35em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000321}}
   .comment--medium:after, .comment--large:after {
     right: -28px;
   }
 }
-@media (min-width: 35em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000316}}
-  .comment--medium, .comment--large {
-    padding: 1.33333em 1.33333em 1.33333em 4em;
-  }
-}
-@media (min-width: 50em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000316}}
-  .comment--medium, .comment--large {
-    padding: 1.2em 1.2em 1.2em 3.6em;
-  }
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000336}}
 .comment--medium p:last-child, .comment--large p:last-child {
   margin-bottom: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000341}}
 .comment--large {
   font-size: 1.25em;
   line-height: 1.2em;
   padding: 1.2em 1.2em 1.2em 2.4em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000345}}
 .comment--large:before {
-  top: 0.48em;
-  left: 0.4em;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
   opacity: 0.2;
   font-size: 1.875em;
   line-height: 1.2em;
+  position: absolute;
+  top: 0.48em;
+  left: 0.4em;
+  content: "\201C";
+  font-weight: 700;
 }
 @media (min-width: 35em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000341}}
   .comment--large {
     font-size: 1.375em;
     line-height: 1.63636em;
@@ -3021,7 +3005,7 @@ button.form--story__button:hover {
   }
 }
 @media (min-width: 50em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000341}}
   .comment--large {
     font-size: 1.5em;
     line-height: 1.5em;

@@ -40,23 +40,25 @@
 
     <div class="g l--push-v-1">
       <div class="g__item w--two-thirds w--m-one-half">
-        <p>{{result.text}}</p>
+        <div class="l--pad-h-1 text--para-margin">
+          <p>{{result.text}}</p>
+        </div>
       </div>
       <div class="g__item w--one-third w--m-one-half">
-        <div class="text--meta">
-          <a href="{{result.database}}/{{result.id}}">{{result.db_desc}} {% if result.text|count < 100 and result.url %} <i class="icon--picture">icon</i>{% endif %}</a>
-        </div>
         {% if result.text|count >= 100 and result.url %}
           <div class="media--image">
             <img src="{{result.url}}" alt="Test">
           </div>
         {% endif %}
+        <div class="text--meta">
+          <a href="{{result.database}}/{{result.id}}" title="{{result.db_desc}}">{{result.db_desc}} {% if result.text|count < 100 and result.url %} <i class="icon--picture">icon</i>{% endif %}</a>
+        </div>
       </div>
     </div>
 
     <div class="g l--push-v-1">
       <div class="g__item w--two-thirds w--m-one-whole">
-        <div class="comment--medium">
+        <div class="comment--medium l--pad-all-1">
           {% for keyword in result.keyword %}
             {{keyword}}
           {% endfor %}

@@ -2073,12 +2073,13 @@ Centered grids align grid items centrally without needing to use push or pull cl
   -moz-transition: 0.2s ease-out;
   -o-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
-  font-size: 0.75em;
-  line-height: 2em;
-  background: url('/img/rgbapng/0000000d.png?1370088420');
-  background: rgba(0, 0, 0, 0.05);
-  padding: 0.25em 0.5em;
-  margin-bottom: 1em;
+  font-size: 0.625em;
+  line-height: 2.4em;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 .text--meta:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
@@ -2087,6 +2088,10 @@ Centered grids align grid items centrally without needing to use push or pull cl
 
 .text--align-center {
   text-align: center;
+}
+
+.text--para-margin p:last-child {
+  margin-bottom: 0;
 }
 
 /*
@@ -2580,19 +2585,7 @@ button.form--story__button:hover {
   font-weight: 300;
   font-style: italic;
   position: relative;
-  padding: 1.5em 1.5em 1.5em 3em;
   background-color: white;
-}
-.comment--medium:before, .comment--large:before {
-  content: "\201C";
-  position: absolute;
-  top: 0.68em;
-  left: 0.5em;
-  font-weight: 700;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
-  opacity: 0.2;
-  font-size: 2.5em;
-  line-height: 0.9em;
 }
 .comment--medium:after, .comment--large:after {
   content: "";
@@ -2612,16 +2605,6 @@ button.form--story__button:hover {
     right: -28px;
   }
 }
-@media (min-width: 35em) {
-  .comment--medium, .comment--large {
-    padding: 1.33333em 1.33333em 1.33333em 4em;
-  }
-}
-@media (min-width: 50em) {
-  .comment--medium, .comment--large {
-    padding: 1.2em 1.2em 1.2em 3.6em;
-  }
-}
 .comment--medium p:last-child, .comment--large p:last-child {
   margin-bottom: 0;
 }
@@ -2632,12 +2615,15 @@ button.form--story__button:hover {
   padding: 1.2em 1.2em 1.2em 2.4em;
 }
 .comment--large:before {
-  top: 0.48em;
-  left: 0.4em;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
   opacity: 0.2;
   font-size: 1.875em;
   line-height: 1.2em;
+  position: absolute;
+  top: 0.48em;
+  left: 0.4em;
+  content: "\201C";
+  font-weight: 700;
 }
 @media (min-width: 35em) {
   .comment--large {
