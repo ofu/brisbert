@@ -36,7 +36,7 @@
   padding: 0 0.75em;
   background-color: rgba(0, 0, 0, 0.025);
 }
-@media (min-width: 53.75em) {
+@media (min-width: 50em) {
   [class*="ph__color"] {
     line-height: 4.5em;
     padding: 0;
@@ -186,10 +186,10 @@ html {
     line-height: 1.66667em;
   }
 }
-@media (min-width: 53.75em) {
+@media (min-width: 50em) {
   html {
-    font-size: 1.375em;
-    line-height: 1.63636em;
+    font-size: 1.25em;
+    line-height: 1.8em;
   }
 }
 
@@ -876,7 +876,7 @@ These are components that can be utilised or are depended on by other components
 </div>
 
 */
-.l--clearfix {
+.l--clearfix, .l__wrapper {
   overflow: hidden;
   *zoom: 1;
 }
@@ -919,7 +919,7 @@ $max-site-width is assigned to this
 
 */
 .l__wrapper {
-  max-width: 48em;
+  max-width: 64em;
   margin-left: auto;
   margin-right: auto;
   padding: 0 1.5em;
@@ -929,7 +929,7 @@ $max-site-width is assigned to this
     padding: 0 3em;
   }
 }
-@media (min-width: 53.75em) {
+@media (min-width: 62.5em) {
   .l__wrapper {
     padding: 0 6em;
   }
@@ -1361,7 +1361,7 @@ Only use them if it does not make sense to add this styling to another element/c
     margin-left: -1.5em;
   }
 }
-@media (min-width: 53.75em) {
+@media (min-width: 62.5em) {
   .g, .g--tight, .g--collapsed, .g--rev, .g--right, .g--centered {
     margin-left: -3em;
   }
@@ -1391,7 +1391,7 @@ Only use them if it does not make sense to add this styling to another element/c
     padding-left: 1.5em;
   }
 }
-@media (min-width: 53.75em) {
+@media (min-width: 62.5em) {
   .g__item {
     padding-left: 3em;
   }
@@ -1421,7 +1421,7 @@ Tight grids have all the properties of regular grids, minus any spacing.
     margin-left: -0.75em;
   }
 }
-@media (min-width: 53.75em) {
+@media (min-width: 62.5em) {
   .g--tight {
     margin-left: -1.5em;
   }
@@ -1434,7 +1434,7 @@ Tight grids have all the properties of regular grids, minus any spacing.
     padding-left: 0.75em;
   }
 }
-@media (min-width: 53.75em) {
+@media (min-width: 62.5em) {
   .g--tight > .g__item {
     padding-left: 1.5em;
   }
@@ -1724,7 +1724,7 @@ Centered grids align grid items centrally without needing to use push or pull cl
     width: 91.666%;
   }
 }
-@media (min-width: 35em) and (max-width: 53.6875em) {
+@media (min-width: 35em) and (max-width: 49.9375em) {
   .w--m-one-whole {
     width: 100%;
   }
@@ -1821,7 +1821,7 @@ Centered grids align grid items centrally without needing to use push or pull cl
     width: 91.666%;
   }
 }
-@media (min-width: 53.75em) and (max-width: 68.6875em) {
+@media (min-width: 50em) and (max-width: 62.4375em) {
   .w--l-one-whole {
     width: 100%;
   }
@@ -1918,7 +1918,7 @@ Centered grids align grid items centrally without needing to use push or pull cl
     width: 91.666%;
   }
 }
-@media (min-width: 68.75em) {
+@media (min-width: 62.5em) {
   .w--h-one-whole {
     width: 100%;
   }
@@ -2256,7 +2256,7 @@ input[type=text].form--story__text {
   margin: 0;
   line-height: inherit;
   color: #0580a4;
-  border-bottom: 1px dashed #cccccc;
+  border-bottom: 2px dashed #cccccc;
 }
 
 input[type=text].form--story__button,
@@ -2442,7 +2442,7 @@ input[type=text].form--story__button:hover,
   -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-@media (min-width: 68.75em) {
+@media (min-width: 62.5em) {
   .no-csstransforms3d .off-canvas--right-under .off-canvas--right {
     right: 16.5em;
   }
@@ -2485,45 +2485,70 @@ input[type=text].form--story__button:hover,
 
 .comment, .comment--large {
   font-weight: 300;
+  font-style: italic;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
-  font-size: 0.75em;
-  line-height: 2em;
+  font-size: 0.875em;
+  line-height: 1.88571em;
 }
-@media (min-width: 35em) {
-  .comment, .comment--large {
-    font-size: 0.875em;
-    line-height: 1.71429em;
-  }
-}
-@media (min-width: 53.75em) {
+@media (min-width: 62.5em) {
   .comment, .comment--large {
     font-size: 1em;
-    line-height: 1.5em;
+    line-height: 1.8em;
   }
+}
+.comment p:last-child, .comment--large p:last-child {
+  margin-bottom: 0;
 }
 
 .comment--large {
   font-size: 1.25em;
   line-height: 1.2em;
   position: relative;
+  padding: 1.2em 1.2em 1.2em 2.4em;
+  background-color: white;
 }
 .comment--large:before {
-  content: "e2809c";
+  content: "\201C";
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0.48em;
+  left: 0.4em;
+  font-weight: 700;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+  font-size: 1.875em;
+  line-height: 1.2em;
+}
+.comment--large:after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  right: -14px;
+  position: absolute;
+  bottom: 10px;
+  border-style: solid;
+  border-width: 24px 0 24px 41.52px;
+  font-size: 1em;
+  line-height: 1.5em;
+  border-color: transparent transparent transparent white;
+}
+@media (min-width: 35em) {
+  .comment--large:after {
+    right: -28px;
+  }
 }
 @media (min-width: 35em) {
   .comment--large {
-    font-size: 1.5em;
-    line-height: 1.5em;
+    font-size: 1.375em;
+    line-height: 1.63636em;
+    padding: 1em 1em 1em 3em;
   }
 }
-@media (min-width: 53.75em) {
+@media (min-width: 50em) {
   .comment--large {
-    font-size: 1.75em;
-    line-height: 1.28571em;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    padding: 0.85714em 0.85714em 0.85714em 2.57143em;
   }
 }
 
@@ -2562,8 +2587,29 @@ input[type=text].form--story__button:hover,
 }
 
 .header__title {
-  text-align: center;
+  font-weight: 300;
+  padding: 0.8em 0;
+  font-size: 1.875em;
+  line-height: 1.2em;
+}
+@media (min-width: 50em) {
+  .header__title {
+    font-size: 2.25em;
+    line-height: 1.33333em;
+  }
 }
 .header__title a {
   color: #333333;
+}
+
+.header__logo {
+  height: 3em;
+  width: 3em;
+  padding: 1.05em 0 0;
+}
+@media (min-width: 50em) {
+  .header__logo {
+    height: 4.5em;
+    width: 4.5em;
+  }
 }

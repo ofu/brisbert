@@ -6,8 +6,7 @@
 
 {% block content %}
 
-
-    <div class="l__wrapper l--push-v-2">
+<main role="main">
 
     <form id="form" method="POST" class="form-search" action="/">
         <h3>Bert Search</h3>
@@ -15,42 +14,43 @@
         <button id="find_button" type="submit" class="btn">Search</button>
     </form>
 
-      <p class="text-lead">BrisBert remembers <span>a year…</span></p>
+    <div class="l__wrapper l--push-bottom-2">
+      <div class="l--push-v-1">
+        <div class="comment--large">
+          <p>I remember it well, the year was <strong>1943</strong>. We used to onions on our <a href="#">belts</a>, which was the style at the time.</p>
+        </div>
+      </div>
 
-<form action="" class="form--story l--push-top-1">
-  <div class="comment--large">
-    <p>I remember it well, the year was </span><input class="form--story__text" type="text" value="{{year}}"/>…</p>
-  </div>
-  <div class="l--push-top-1 text--align-right">
-    <input type="submit" class="form--story__button" value="continue rambling"/>
-  </div>
-</form>
+    {% for result in search_results.objects %}
 
-{% for result in search_results.objects %}
+      <div class="g l--push-v-1">
+        <div class="g__item w--two-thirds w--m-one-half">
+          <p>{{result.text}}</p>
+        </div>
+        <div class="g__item w--one-third w--m-one-half">
+          <div class="text--meta">
+            <a href="#">{{result.db_desc}}</a>
+          </div>
+          <div class="media--image">
+            <img src="{{result.url}}" alt="Test">
+          </div>
+        </div>
+      </div>
 
-<div class="card l--push-bottom-1">
-  <h2 class="card__title">{{result.db_desc}}</h2>
-  <div class="card__body">
-    <div class="card__image">
-      <img src="{{result.url}}" alt="Test">
+      <div class="g -push-v-1">
+        <div class="g__item w--two-thirds w--m-one-whole">
+          <div class="comment--medium">
+            {% for keyword in result.keyword %}
+              {{keyword}}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="card__text l--pad-all-1">
-      <p>{{result.text}}</p>
-    </div>
-    <div class="card__more text--align-right l--pad-h-1">
-      <a href="#">more about pineapple ></a>
-    </div>
-  </div>
-  <div class="comment l--push-v-1">
-    {% for keyword in result.keyword %}
-      {{keyword}}
+
     {% endfor %}
-  </div>
-</div>
 
-{% endfor %}
+</main>
 
-    </div>
-  
   {% endblock %}
   

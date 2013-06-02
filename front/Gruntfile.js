@@ -175,10 +175,6 @@ module.exports = function(grunt) {
       }
     },
     shell: {
-      jekyll: {
-        command: 'rm -rf _site/*; jekyll build',
-        stdout: false
-      },
       jsdelete: {
         command: 'rm -rf _site/assets/js/*',
         stdout: false
@@ -213,10 +209,6 @@ module.exports = function(grunt) {
         files: ['<%= jshint.vendors.src %>', '<%= jshint.components.src %>'],
         tasks: ['jshint:components', 'concat', 'shell:jsdelete', 'copy:js']
       },
-      jekyll: {
-        files: ['src/**/*.html', 'src/**/*.md'],
-        tasks: ['shell:jekyll']
-      },
       images: {
         files: 'src/img/**/*',
         tasks: ['copy:images']
@@ -244,7 +236,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-open');
 
   // Default task.
-  grunt.registerTask('default', ['jshint:components', 'concat', 'uglify', 'compass:clean', 'compass:styleguide', 'compass:prod', 'copy:cssSg', 'copy:css', 'shell:jekyll']);
+  grunt.registerTask('default', ['jshint:components', 'concat', 'uglify', 'compass:clean', 'compass:styleguide', 'compass:prod', 'copy:cssSg', 'copy:css']);
 
   // Watch and open server in browser
   grunt.registerTask('wo', ['connect', 'open:server', 'watch']);

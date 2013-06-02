@@ -54,7 +54,7 @@ $grid-padding : rhythm(2)                     !default;
   @include breakpoint($gte-medium) {
     margin-left: - $grid-padding/2;
   }
-  @include breakpoint($gte-large) {
+  @include breakpoint($gte-huge) {
     margin-left: - $grid-padding;
   }
   > .#{$grid-prefix} {
@@ -80,7 +80,7 @@ $grid-padding : rhythm(2)                     !default;
   @include breakpoint($gte-medium) {
     padding-left: $grid-padding/2;
   }
-  @include breakpoint($gte-large) {
+  @include breakpoint($gte-huge) {
     padding-left: $grid-padding;
   }
 }
@@ -108,7 +108,7 @@ Tight grids have all the properties of regular grids, minus any spacing.
   @include breakpoint($gte-medium) {
     margin-left: - $grid-padding/4;
   }
-  @include breakpoint($gte-large) {
+  @include breakpoint($gte-huge) {
     margin-left: - $grid-padding/2;
   }
   > .#{$grid-el}item{
@@ -116,7 +116,7 @@ Tight grids have all the properties of regular grids, minus any spacing.
     @include breakpoint($gte-medium) {
       padding-left: $grid-padding/4;
     }
-    @include breakpoint($gte-large) {
+    @include breakpoint($gte-huge) {
       padding-left: $grid-padding/2;
     }
   }

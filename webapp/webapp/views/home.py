@@ -8,7 +8,7 @@ def home(request):
         search_query = request.POST['search_query']
     year = 2012
     url = 'http://127.0.0.1:8080/brisbert/keyword'
-    r = requests.get(url, params={'value':search_query, 'num':'10'})
+    r = requests.get(url, params={'value':search_query, 'num':'2'})
     search_results = r.json()
     print search_results
     return {

@@ -40,14 +40,14 @@ $offcanvas-target-width   : 11 !default;
 }
 
 .off-canvas__toggle {
-  @include adjust-font-size-to(24px, 1);
-  @include inline-block;
-  padding: rhythm(.5, 24px);
-  text-align: center;
-  height: rhythm(2, 24px);
-  width: rhythm(2, 24px);
+  // @include adjust-font-size-to(24px, 1);
+  display: block;
+  // padding: rhythm(.5, 24px);
+  // text-align: center;
+  // height: rhythm(2, 24px);
+  // width: rhythm(2, 24px);
   &.is-active {
-    color: $offcanvas-outer-bg-color;
+    @include opacity(.5);
   }
 }
 
@@ -70,6 +70,13 @@ $offcanvas-target-width   : 11 !default;
   }
 }
 
+.off-canvas__header__title {
+  @include adjust-font-size-to(16px, 2);
+  color: darken($offcanvas-inner-bg-color, 10%);
+  @include inline-block;
+  padding-left: rhythm(.5, 16px);
+}
+
 %off-canvas__target {
   width: rhythm($offcanvas-target-width);
   background-color: $offcanvas-outer-bg-color;
@@ -84,6 +91,14 @@ $offcanvas-target-width   : 11 !default;
     @include box-shadow(0 2px 8px rgba($black,.2));
     z-index: 2;
   }
+  &[data-off-canvas=under] {
+    color: $offcanvas-inner-bg-color;
+  }
+}
+
+.off-canvas__target__body {
+  @include adjust-font-size-to(12px);
+  padding: rhythm(.5, 12px);
 }
 
 .off-canvas--left {
