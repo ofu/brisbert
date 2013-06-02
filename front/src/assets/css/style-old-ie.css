@@ -982,7 +982,7 @@ $max-site-width is assigned to this
   max-width: 45em;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 1.5em;
+  padding: 0 0.75em;
   min-width: 44em;
 }
 
@@ -2230,7 +2230,7 @@ button.form--story__button:hover {
   content: "";
   width: 0px;
   height: 0px;
-  right: -14px;
+  right: -20px;
   position: absolute;
   bottom: 10px;
   border-style: solid;
@@ -2328,4 +2328,21 @@ button.form--story__button:hover {
   clear: both;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_footer\.scss}line{font-family:\000031}}
+.footer {
+  background-color: #614E2D;
+  color: #fbf5e8;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_footer\.scss}line{font-family:\000036}}
+.footer__title {
+  color: #fbf5e8;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_footer\.scss}line{font-family:\0000310}}
+.footer__block {
+  font-size: 0.75em;
+  line-height: 2em;
 }

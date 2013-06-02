@@ -924,7 +924,7 @@ $max-site-width is assigned to this
   max-width: 45em;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 1.5em;
+  padding: 0 0.75em;
 }
 @media (min-width: 35em) {
   .l__wrapper {
@@ -2591,7 +2591,7 @@ button.form--story__button:hover {
   content: "";
   width: 0px;
   height: 0px;
-  right: -14px;
+  right: -20px;
   position: absolute;
   bottom: 10px;
   border-style: solid;
@@ -2722,4 +2722,18 @@ button.form--story__button:hover {
     right: 0;
     text-align: right;
   }
+}
+
+.footer {
+  background-color: #614E2D;
+  color: #fbf5e8;
+}
+
+.footer__title {
+  color: #fbf5e8;
+}
+
+.footer__block {
+  font-size: 0.75em;
+  line-height: 2em;
 }

@@ -23,11 +23,6 @@
     </form>
   </div>
 
-{% if twitter_feed %}
-  <a class="twitter-timeline" href="https://twitter.com/bewilderson" data-widget-id="341014295133425664">Tweets by @bewilderson</a>
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-{% endif %}
-
 <!--   <form id="form" method="POST" class="form-search" action="/">
       <h3>Bert Search</h3>
       <input type="text" class="input-medium search-query" placeholder="grumpy old man" name="search_query">
@@ -47,7 +42,9 @@
       <div class="g__item w--one-third w--m-one-half">
         {% if result.text|count >= 100 and result.url %}
           <div class="media--image">
-            <img src="{{result.url}}" alt="Test">
+            <a href="{{result.database}}/{{result.id}}">
+              <img src="{{result.url}}" alt="Test">
+            </a>
           </div>
         {% endif %}
         <div class="text--meta">
@@ -63,6 +60,32 @@
   </div>
 
 </main>
+
+{% if twitter_feed %}
+
+<div class="l__wrapper footer">
+  <footer role="contentinfo" class="l--pad-v-2">
+    <div class="g">
+      <div class="g__item w--one-half">
+        <div class="footer__block">
+          <h2 class="delta footer__title">Bert is on Twitter!</h2>
+          <ul class="tweet list--link-block list--slat l--push-bottom-1" id="twitter_update_list"></ul>
+        </div>
+      </div>
+      <div class="g__item w--one-half">
+        <div class="footer__block">
+          <ul class="list--link-block list--slat l--push-bottom-1">
+            <li><a href="#">Item</a></li>
+            <li><a href="#">Item</a></li>
+            <li><a href="#">Item</a></li>
+            <li><a href="#">Item</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+{% endif %}
 
 {% endblock %}
 

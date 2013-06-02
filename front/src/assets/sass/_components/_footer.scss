@@ -1,0 +1,12 @@
+.footer {
+  background-color: #614E2D;
+  color: $color-bg-light;
+}
+
+.footer__title {
+  color: $color-bg-light;
+}
+
+.footer__block {
+  @include adjust-font-size-to(12px);
+}

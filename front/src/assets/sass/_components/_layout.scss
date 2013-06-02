@@ -72,7 +72,7 @@ $max-site-width is assigned to this
   max-width: $layout-wrapper-max-width;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 $grid-padding / 2;
+  padding: 0 $grid-padding / 4;
   @include breakpoint($gte-medium) {
     padding: 0 $grid-padding;
   }
