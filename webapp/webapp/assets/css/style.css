@@ -943,11 +943,8 @@ figcaption {
 */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_elements\/_misc\.scss}line{font-family:\0000313}}
 hr {
-  height: 1.5em;
-  width: 100%;
-  border: 0;
+  border: 1px solid #f8ecd2;
   margin: 1.5em 0;
-  background: transparent;
 }
 
 /*

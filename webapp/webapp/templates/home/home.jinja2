@@ -29,18 +29,18 @@
       <button id="find_button" type="submit" class="btn">Search</button>
   </form> -->
 
-  <div class="l--push-bottom-2">
+  <div class="l--push-v-2">
 
   {% for result in search_results.objects %}
 
     <div class="g l--push-v-1">
       <div class="g__item w--two-thirds w--m-one-half">
-        <div class="l--pad-h-1 text--para-margin">
+        <div class="text--para-margin">
           <p>{{result.text|safe}}</p>
         </div>
       </div>
       <div class="g__item w--one-third w--m-one-half">
-        {% if result.text|count >= 100 and result.url %}
+        {% if result.url %}
           <div class="media--image">
             <a href="{{result.database}}/{{result.id}}">
               <img src="{{result.url}}" alt="Test">
@@ -48,7 +48,7 @@
           </div>
         {% endif %}
         <div class="text--meta">
-          <a href="{{result.database}}/{{result.id}}" title="{{result.db_desc}}">{{result.db_desc}} {% if result.text|count < 100 and result.url %} <i class="icon--picture">icon</i>{% endif %}</a>
+          <a href="{{result.database}}/{{result.id}}" title="{{result.db_desc}}">{{result.db_desc}}</a>
         </div>
       </div>
     </div>
@@ -69,8 +69,8 @@
       <div class="g__item w--one-half">
         <div class="footer__block l--push-top-2">
           <h2 class="delta footer__title">Bert is on Twitter!</h2>
-          <ul class="tweet list--link-block list--slat l--push-bottom-1" id="twitter_update_list"></ul>
-          <a href="http://twitter.com/BrisBert">Find BrisBert on Twitter</a>
+          <ul class="tweet list--link-block list--slat" id="twitter_update_list"></ul>
+          <div><a href="http://twitter.com/BrisBert">Find BrisBert on Twitter</a></div>
         </div>
       </div>
       <div class="g__item w--one-half">
