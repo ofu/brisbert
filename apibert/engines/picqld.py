@@ -45,8 +45,7 @@ class PictureQueenslandEngine(object):
             'keyword': self._format_keywords(item),
             'text': item.description,
             'date': item.year,
-            'url' : item.small_url,
-            'url_link' : item.large_url,
+            'url' : item.large_url,
         }
 
     def _format_keywords(self, item):
