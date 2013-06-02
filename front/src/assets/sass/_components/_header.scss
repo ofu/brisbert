@@ -16,11 +16,9 @@
 }
 
 .header__logo {
-  height: rhythm(2);
-  width: rhythm(2);
-  padding: rhythm(.7) 0 0;
-  @include breakpoint($gte-large) {
-    height: rhythm(3);
-    width: rhythm(3);
+  max-width: rhythm(4);
+  padding: rhythm(.75) 0 rhythm(.25);
+  @include breakpoint($gte-huge) {
+    max-width: rhythm(5);
   }
 }

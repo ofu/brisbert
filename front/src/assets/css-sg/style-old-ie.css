@@ -2082,7 +2082,6 @@ button.form--story__button:hover {
 }
 
 .header__logo {
-  height: 3em;
-  width: 3em;
-  padding: 1.05em 0 0;
+  max-width: 6em;
+  padding: 1.125em 0 0.375em;
 }
