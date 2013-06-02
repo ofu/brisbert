@@ -9,7 +9,11 @@ $emphasis-mod    : #{$emphasis-prefix}#{$mod} !default;
 
 
 .#{$emphasis-mod}more {
-  background-color: lighten($color-bg, 10%);
+  background-color: $color-bg-light;
+}
+
+.#{$emphasis-mod}more-small {
+  background-color: lighten($color-bg-light, 3%);
 }
 
 .#{$emphasis-mod}more-pop {
