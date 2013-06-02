@@ -164,7 +164,7 @@ html {
 
 body {
   margin: 0;
-  background: #fbf5e8;
+  background: black;
   -webkit-overflow-scroll: touch;
 }
 
@@ -882,7 +882,7 @@ $max-site-width is assigned to this
 
 */
 .l__wrapper {
-  max-width: 64em;
+  max-width: 52em;
   margin-left: auto;
   margin-right: auto;
   padding: 0 1.5em;
@@ -1762,7 +1762,11 @@ button.form--story__button:hover {
 }
 
 .emphasis--more, .emphasis--more-pop {
-  background-color: white;
+  background-color: #fbf5e8;
+}
+
+.emphasis--more-small {
+  background-color: #fefbf5;
 }
 
 .emphasis--more-pop {
@@ -1772,7 +1776,7 @@ button.form--story__button:hover {
 }
 
 .emphasis--less {
-  background-color: #f8ecd2;
+  background-color: black;
 }
 
 .off-canvas__outer {
@@ -1787,7 +1791,7 @@ button.form--story__button:hover {
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: #fbf5e8;
+  background-color: black;
   -webkit-transition: 0.2s ease-out;
   -moz-transition: 0.2s ease-out;
   -o-transition: 0.2s ease-out;
@@ -1838,13 +1842,13 @@ button.form--story__button:hover {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 [data-off-canvas=over] .off-canvas__header {
-  background-color: white;
+  background-color: #1a1a1a;
 }
 
 .off-canvas__header__title {
   font-size: 1em;
   line-height: 3em;
-  color: #f5e3bc;
+  color: black;
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -1877,7 +1881,7 @@ button.form--story__button:hover {
   z-index: 2;
 }
 [data-off-canvas=under].off-canvas--left, [data-off-canvas=under].off-canvas--right {
-  color: #fbf5e8;
+  color: black;
 }
 
 .off-canvas__target__body {
@@ -1960,12 +1964,12 @@ button.form--story__button:hover {
   float: left;
 }
 [data-off-canvas=over] .off-canvas__close {
-  background-color: #f7e9c9;
-  color: #fffffe;
+  background-color: black;
+  color: #0d0d0d;
 }
 [data-off-canvas=over] .off-canvas__close:hover {
-  background-color: #f1daa6;
-  color: white;
+  background-color: black;
+  color: #1a1a1a;
 }
 
 .comment {

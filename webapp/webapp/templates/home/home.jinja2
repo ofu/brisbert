@@ -6,9 +6,9 @@
 
 {% block content %}
 
-<main role="main">
+<main role="main" class="emphasis--more l__wrapper">
 
-  <div class="l__wrapper l--push-v-1">
+  <div class="l--push-v-1">
     <form id="form" method="POST" class="form-search form--story" action="/">
 
       <p class="text--lead">Remembers <span class="form--story__radio"><span class="form--story__radio__item"><input type="radio" name="context" value="year" checked><span class="form--story__radio__label">When</span></span> <span class="form--story__radio__divider">/</span> <span class="form--story__radio__item"><input type="radio" name="context" value="subject"><span class="form--story__radio__label">What</span></span></span>…</p>
@@ -29,8 +29,8 @@
       <button id="find_button" type="submit" class="btn">Search</button>
   </form> -->
 
-  <div class="l__wrapper l--push-bottom-2">
-    <div class="l--push-v-1">
+  <div class="l--push-bottom-2">
+    <div class="l--pad-v-1">
       <div class="comment--large">
         <p>I remember it well, the year was <strong>1943</strong>. We used to onions on our <a href="#">belts</a>, which was the style at the time.</p>
       </div>
@@ -40,29 +40,21 @@
 
     <div class="g l--push-v-1">
       <div class="g__item w--two-thirds w--m-one-half">
-      {% if result.text|count < 100 and result.url %}
-        <div class="media--image">
-          <img src="{{result.url}}" alt="Test">
-        </div>
-      {% else %}
         <p>{{result.text}}</p>
-      {% endif %}
       </div>
       <div class="g__item w--one-third w--m-one-half">
         <div class="text--meta">
-          <a href="{{result.database}}/{{result.id}}">{{result.db_desc}}</a>
+          <a href="{{result.database}}/{{result.id}}">{{result.db_desc}} {% if result.text|count < 100 and result.url %} <i class="icon--picture">icon</i>{% endif %}</a>
         </div>
         {% if result.text|count >= 100 and result.url %}
           <div class="media--image">
             <img src="{{result.url}}" alt="Test">
           </div>
-        {% else %}
-          <p>{{result.text}}</p>
         {% endif %}
       </div>
     </div>
 
-    <div class="g -push-v-1">
+    <div class="g l--push-v-1">
       <div class="g__item w--two-thirds w--m-one-whole">
         <div class="comment--medium">
           {% for keyword in result.keyword %}
