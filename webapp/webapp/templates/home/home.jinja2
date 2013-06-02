@@ -13,7 +13,7 @@
 
       <div class="l--push-top-1">
         <div class="comment--large">
-          <p>I remember it well, my favourite subject was </span><input class="form--story__text search-query" type="text" value="Brisbane" name="search_query"/>
+          <p>I remember it well, my favourite subject was </span><input class="form--story__text search-query" type="text" value="{{search_query}}" name="search_query"/>
           </p>
         </div>
       </div>
@@ -56,7 +56,7 @@
       </div>
     </div>
 
-    <form><input type="hidden" id="bert-annotate-{{loop.index0}}" value="{{get_kw(result.keywords)}}"></form>
+    <form><input type="hidden" id="bert-annotate-{{loop.index0}}" value="{{get_kw(result.keyword)}}"></form>
     <div class="bert-annotate"></div>
   {% endfor %}
 

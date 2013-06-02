@@ -8,7 +8,7 @@ def speak(request):
     url = 'http://127.0.0.1:8080/speak/%s' % cmd
     r = requests.get(url)
     search_results = r.json()
-    url = '<a href="/?search=%s">%s</a>' % (kw, kw)
+    url = '<a href="/?search_query=%s">%s</a>' % (kw, kw)
     search_results['bert'] = search_results['bert'].replace('{{SUBJECT}}', url)
     return {
         'speak': search_results,        

@@ -37,7 +37,7 @@ def _get_random(pos):
     query = session.query(Bert)
     query = query.filter_by(pos=pos)
     results = query.all()    
-    offset = random.randint(0, len(results))
+    offset = random.randint(0, len(results) - 1)
     result = results[offset]
     if result is None:
         result = Bert()
