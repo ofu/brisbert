@@ -21,3 +21,26 @@ def add_picture(picture):
     """
     session = common.DBSession()
     session.add(picture)
+
+    
+def get_item_by_id(value):
+    session = common.DBSession()
+    query = session.query(Picture)
+    query = query.filter_by(id=value)
+    return query.first()    
+
+    
+def get_items_by_keywords(value, num):
+    session = common.DBSession()
+    query = session.query(Picture)
+    query = query.filter(Picture.description.like('%' + value + '%'))
+    query = query.limit(num)
+    return query.all()
+
+    
+def get_items_by_date(value, num):
+    session = common.DBSession()
+    query = session.query(Picture)
+    query = query.filter_by(Picture.year == int(value))
+    query = query.limit(num)
+    return query.all()
