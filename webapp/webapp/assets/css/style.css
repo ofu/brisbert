@@ -3057,6 +3057,16 @@ button.form--story__button:hover {
   padding: 0.375em 1.5em;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_media\.scss}line{font-family:\000031}}
+.media--image {
+  align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_media\.scss}line{font-family:\000033}}
+.media--image img {
+  margin: 0 auto;
+  display: block;
+}
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_header\.scss}line{font-family:\000031}}
 .header {
   position: relative;
