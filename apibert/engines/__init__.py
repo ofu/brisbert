@@ -1,5 +1,6 @@
 import dummy
 import myouseum
+import picqld
 import data.common as common
 
 """ Engine list used by the apibert. Objects in the list can be either class 
@@ -8,6 +9,7 @@ instances, or modules
 engine_list_ = { 
     'myouseumi': myouseum.CollectionItemEngine(),
     'myouseump': myouseum.CollectionPhotoEngine(),
+    'picqld': picqld.PictureQueenslandEngine() 
 }
 
 """ Engine descriptions, used by the front end to attribute 
@@ -15,6 +17,7 @@ engine_list_ = {
 engine_desc_ = {
     'myouseumi': 'Queensland Museum Information, MYOUSEUM150',
     'myouseump': 'Queensland Museum Information, MYOUSEUM150',
+    'picqld': 'Pictures Queensland, 40 000 out of copyright photographs from the photograph collection of the State Library of Queensland. People and places from across Queensland across time',
 }
 
 common.init('sqlite:///bert.sqlite')    
