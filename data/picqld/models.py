@@ -9,6 +9,7 @@ class Picture(common.Base):
     id = Column(Integer, primary_key=True)    
     title = Column(Unicode(128))  
     description = Column(Unicode(256))
+    subjects = Column(Unicode(128))
     year = Column(Integer)
     small_url = Column(Unicode(128))
     large_url = Column(Unicode(128))
