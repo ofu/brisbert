@@ -105,4 +105,6 @@ def database_bert_speak_to_me():
                                             
 if __name__ == '__main__':
     bottle.run(host='localhost', port=8080, debug=True)
+else:
+    application = bottle.default_app()
 
