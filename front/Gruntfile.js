@@ -119,7 +119,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'src/assets/css/',
             src: ['**'],
-            dest: '_site/assets/css/'
+            dest: '../webapp/webapp/assets/css/'
           }
         ]
       },
@@ -129,7 +129,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'src/assets/css-sg/',
             src: ['**'],
-            dest: '_site/assets/css-sg/'
+            dest: '../webapp/webapp/assets/css-sg/'
           }
         ]
       },
@@ -139,7 +139,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'src/assets/js/',
             src: ['**'],
-            dest: '_site/assets/js/'
+            dest: '../webapp/webapp/assets/js/'
           }
         ]
       },
@@ -149,7 +149,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'src/assets/img/',
             src: ['**'],
-            dest: '_site/assets/img/'
+            dest: '../webapp/webapp/assets/img/'
           }
         ]
       },
@@ -159,7 +159,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'src/assets/fonts/',
             src: ['**'],
-            dest: '_site/assets/fonts/'
+            dest: '../webapp/webapp/assets/fonts/'
           }
         ]
       },
@@ -169,28 +169,20 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'src/styleguide/',
             src: ['**'],
-            dest: '_site/styleguide/'
+            dest: '../webapp/webapp/styleguide/'
           }
         ]
       }
     },
     shell: {
       jsdelete: {
-        command: 'rm -rf _site/assets/js/*',
+        command: 'rm -rf ../webapp/webapp/assets/js/*',
         stdout: false
       },
     },
-    connect: {
-      livereload: {
-        options: {
-          port: 4000,
-          base: '_site'
-        }
-      }
-    },
     open : {
       server : {
-        path: 'http://localhost:4000'
+        path: 'http://localhost:6543'
       }
     },
     watch: {
@@ -236,12 +228,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-open');
 
   // Default task.
-  grunt.registerTask('default', ['jshint:components', 'concat', 'uglify', 'compass:clean', 'compass:styleguide', 'compass:prod', 'copy:cssSg', 'copy:css']);
+  grunt.registerTask('default', ['jshint:components', 'concat', 'uglify', 'compass:clean', 'compass:styleguide', 'compass:prod', 'copy:cssSg', 'copy:css', 'copy:images']);
 
   // Watch and open server in browser
-  grunt.registerTask('wo', ['connect', 'open:server', 'watch']);
+  grunt.registerTask('wo', ['open:server', 'watch']);
 
   // Watch
-  grunt.registerTask('w', ['connect', 'watch']);
+  grunt.registerTask('w', ['watch']);
 
 };
