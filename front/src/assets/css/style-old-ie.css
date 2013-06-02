@@ -181,12 +181,14 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   min-height: 100%;
+  max-width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_elements\/_global\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_elements\/_global\.scss}line{font-family:\0000353}}
 body {
   margin: 0;
-  background: black;
+  background: #333333;
+  max-width: 100%;
   -webkit-overflow-scroll: touch;
 }
 
@@ -929,7 +931,7 @@ These are components that can be utilised or are depended on by other components
 
 */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_layout\.scss}line{font-family:\0000332}}
-.l--clearfix, .l__wrapper {
+.l--clearfix, .l__wrapper, .header {
   overflow: hidden;
   *zoom: 1;
 }
@@ -977,11 +979,11 @@ $max-site-width is assigned to this
 */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_layout\.scss}line{font-family:\0000370}}
 .l__wrapper {
-  max-width: 52em;
+  max-width: 45em;
   margin-left: auto;
   margin-right: auto;
   padding: 0 1.5em;
-  min-width: 50em;
+  min-width: 44em;
 }
 
 /*
@@ -1659,22 +1661,28 @@ Centered grids align grid items centrally without needing to use push or pull cl
   -moz-transition: 0.2s ease-out;
   -o-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
-  font-size: 0.75em;
-  line-height: 2em;
-  background: url('/img/rgbapng/0000000d.png?1370088420');
-  background: rgba(0, 0, 0, 0.05);
-  padding: 0.25em 0.5em;
-  margin-bottom: 1em;
+  font-size: 0.625em;
+  line-height: 2.4em;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_text\.scss}line{font-family:\0000354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_text\.scss}line{font-family:\0000352}}
 .text--meta:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_text\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_text\.scss}line{font-family:\0000357}}
 .text--align-center {
   text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_text\.scss}line{font-family:\0000362}}
+.text--para-margin p:last-child {
+  margin-bottom: 0;
 }
 
 /*
@@ -1953,7 +1961,7 @@ button.form--story__button:hover {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_emphasis\.scss}line{font-family:\0000315}}
 .emphasis--more-small {
-  background-color: #fefbf5;
+  background-color: white;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_emphasis\.scss}line{font-family:\0000319}}
@@ -1965,7 +1973,7 @@ button.form--story__button:hover {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_emphasis\.scss}line{font-family:\0000324}}
 .emphasis--less {
-  background-color: black;
+  background-color: #262626;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000310}}
@@ -1973,26 +1981,27 @@ button.form--story__button:hover {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
   background-color: #333333;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000318}}
 .off-canvas__inner {
   position: relative;
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: black;
+  background-color: #333333;
   -webkit-transition: 0.2s ease-out;
   -moz-transition: 0.2s ease-out;
   -o-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000326}}
 .no-csstransforms3d .off-canvas--left-under .off-canvas__inner {
   left: 16.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000329}}
 .csstransforms3d .off-canvas--left-under .off-canvas__inner {
   -webkit-transform: translate3d(16.5em, 0, 0);
   -moz-transform: translate3d(16.5em, 0, 0);
@@ -2000,11 +2009,11 @@ button.form--story__button:hover {
   -o-transform: translate3d(16.5em, 0, 0);
   transform: translate3d(16.5em, 0, 0);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000334}}
 .no-csstransforms3d .off-canvas--right-under .off-canvas__inner {
   right: 16.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000336}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000337}}
 .csstransforms3d .off-canvas--right-under .off-canvas__inner {
   -webkit-transform: translate3d(-16.5em, 0, 0);
   -moz-transform: translate3d(-16.5em, 0, 0);
@@ -2013,27 +2022,27 @@ button.form--story__button:hover {
   transform: translate3d(-16.5em, 0, 0);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000343}}
 .off-canvas__toggle, .off-canvas__toggle--left, .off-canvas__toggle--right, .off-canvas__close {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000350}}
 .off-canvas__toggle.is-active, .is-active.off-canvas__toggle--left, .is-active.off-canvas__toggle--right, .is-active.off-canvas__close {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000355}}
 .off-canvas__toggle--left {
   border-right: 1px solid #cccccc;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000360}}
 .off-canvas__toggle--right {
   border-left: 1px solid #cccccc;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000365}}
 .off-canvas__header {
   background-color: #4d4d4d;
   height: 3em;
@@ -2041,16 +2050,16 @@ button.form--story__button:hover {
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000369}}
 [data-off-canvas=over] .off-canvas__header {
-  background-color: #1a1a1a;
+  background-color: #4d4d4d;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000374}}
 .off-canvas__header__title {
   font-size: 1em;
   line-height: 3em;
-  color: black;
+  color: #1a1a1a;
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -2060,7 +2069,7 @@ button.form--story__button:hover {
   padding-left: 0.75em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000381}}
 .off-canvas--left, .off-canvas--right {
   width: 16.5em;
   background-color: #333333;
@@ -2076,7 +2085,7 @@ button.form--story__button:hover {
   -moz-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000390}}
 [data-off-canvas=over].off-canvas--left, [data-off-canvas=over].off-canvas--right {
   background-color: white;
   -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -2084,31 +2093,31 @@ button.form--story__button:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   z-index: 2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000395}}
 [data-off-canvas=under].off-canvas--left, [data-off-canvas=under].off-canvas--right {
-  color: black;
+  color: #333333;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003100}}
 .off-canvas__target__body {
   font-size: 0.75em;
   line-height: 2em;
   padding: 1em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003106}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003107}}
 .off-canvas--left[data-off-canvas=over] {
   left: -16.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003109}}
 .js .off-canvas--left[data-off-canvas=over] {
   left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003111}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003112}}
 .no-csstransforms3d .off-canvas--left[data-off-canvas=over] {
   left: -16.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003115}}
 .csstransforms3d .off-canvas--left[data-off-canvas=over] {
   -webkit-transform: translate3d(-16.5em, 0, 0);
   -moz-transform: translate3d(-16.5em, 0, 0);
@@ -2116,11 +2125,11 @@ button.form--story__button:hover {
   -o-transform: translate3d(-16.5em, 0, 0);
   transform: translate3d(-16.5em, 0, 0);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003118}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003119}}
 .no-csstransforms3d .off-canvas--left-over .off-canvas--left[data-off-canvas=over] {
   left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003121}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003122}}
 .csstransforms3d .off-canvas--left-over .off-canvas--left[data-off-canvas=over] {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
@@ -2129,19 +2138,19 @@ button.form--story__button:hover {
   transform: translate3d(0, 0, 0);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003128}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003129}}
 .off-canvas--right {
   right: -16.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003131}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003132}}
 .js .off-canvas--right {
   right: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003135}}
 .no-csstransforms3d .off-canvas--right {
   right: -16.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003137}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003138}}
 .csstransforms3d .off-canvas--right {
   -webkit-transform: translate3d(16.5em, 0, 0);
   -moz-transform: translate3d(16.5em, 0, 0);
@@ -2149,11 +2158,11 @@ button.form--story__button:hover {
   -o-transform: translate3d(16.5em, 0, 0);
   transform: translate3d(16.5em, 0, 0);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003141}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003142}}
 .no-csstransforms3d .off-canvas--right-over .off-canvas--right {
   right: 16.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003144}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003145}}
 .csstransforms3d .off-canvas--right-over .off-canvas--right {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
@@ -2162,7 +2171,7 @@ button.form--story__button:hover {
   transform: translate3d(0, 0, 0);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003160}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003161}}
 .off-canvas__close {
   font-size: 1.5em;
   line-height: 1em;
@@ -2175,24 +2184,24 @@ button.form--story__button:hover {
   color: #4d4d4d;
   float: right;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003171}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003172}}
 .off-canvas__close:hover {
   background-color: #8c8c8c;
   color: #333333;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003175}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003176}}
 .off-canvas--left .off-canvas__close {
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003178}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003179}}
 [data-off-canvas=over] .off-canvas__close {
-  background-color: black;
-  color: #0d0d0d;
+  background-color: #212121;
+  color: #404040;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003181}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_off-canvas\.scss}line{font-family:\00003182}}
 [data-off-canvas=over] .off-canvas__close:hover {
-  background-color: black;
-  color: #1a1a1a;
+  background-color: #0d0d0d;
+  color: #4d4d4d;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\000033}}
@@ -2214,22 +2223,9 @@ button.form--story__button:hover {
   font-weight: 300;
   font-style: italic;
   position: relative;
-  padding: 1.5em 1.5em 1.5em 3em;
   background-color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000322}}
-.comment--medium:before, .comment--large:before {
-  content: "\201C";
-  position: absolute;
-  top: 0.68em;
-  left: 0.5em;
-  font-weight: 700;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
-  opacity: 0.2;
-  font-size: 2.5em;
-  line-height: 0.9em;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000321}}
 .comment--medium:after, .comment--large:after {
   content: "";
   width: 0px;
@@ -2243,25 +2239,28 @@ button.form--story__button:hover {
   line-height: 1.5em;
   border-color: transparent transparent transparent white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000336}}
 .comment--medium p:last-child, .comment--large p:last-child {
   margin-bottom: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000341}}
 .comment--large {
   font-size: 1.25em;
   line-height: 1.2em;
   padding: 1.2em 1.2em 1.2em 2.4em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_comments\.scss}line{font-family:\0000345}}
 .comment--large:before {
-  top: 0.48em;
-  left: 0.4em;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
   opacity: 0.2;
   font-size: 1.875em;
   line-height: 1.2em;
+  position: absolute;
+  top: 0.48em;
+  left: 0.4em;
+  content: "\201C";
+  font-weight: 700;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_cards\.scss}line{font-family:\000039}}
@@ -2302,7 +2301,7 @@ button.form--story__button:hover {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_header\.scss}line{font-family:\000031}}
 .header {
-  background-color: #fefbf5;
+  position: relative;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_header\.scss}line{font-family:\000036}}
@@ -2319,7 +2318,14 @@ button.form--story__button:hover {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_header\.scss}line{font-family:\0000318}}
 .header__logo {
-  height: 3em;
-  width: 3em;
-  padding: 1.05em 0 0;
+  max-width: 6em;
+  padding: 1.125em 0 0.375em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_header\.scss}line{font-family:\0000326}}
+.header__tagline {
+  font-style: italic;
+  clear: both;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
 }

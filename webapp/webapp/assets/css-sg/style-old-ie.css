@@ -160,11 +160,13 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   min-height: 100%;
+  max-width: 100%;
 }
 
 body {
   margin: 0;
-  background: black;
+  background: #333333;
+  max-width: 100%;
   -webkit-overflow-scroll: touch;
 }
 
@@ -839,7 +841,7 @@ These are components that can be utilised or are depended on by other components
 </div>
 
 */
-.l--clearfix, .l__wrapper {
+.l--clearfix, .l__wrapper, .header {
   overflow: hidden;
   *zoom: 1;
 }
@@ -882,11 +884,11 @@ $max-site-width is assigned to this
 
 */
 .l__wrapper {
-  max-width: 52em;
+  max-width: 45em;
   margin-left: auto;
   margin-right: auto;
   padding: 0 1.5em;
-  min-width: 50em;
+  min-width: 44em;
 }
 
 /*
@@ -1500,12 +1502,13 @@ Centered grids align grid items centrally without needing to use push or pull cl
   -moz-transition: 0.2s ease-out;
   -o-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
-  font-size: 0.75em;
-  line-height: 2em;
-  background: url('/img/rgbapng/0000000d.png?1370088420');
-  background: rgba(0, 0, 0, 0.05);
-  padding: 0.25em 0.5em;
-  margin-bottom: 1em;
+  font-size: 0.625em;
+  line-height: 2.4em;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 .text--meta:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
@@ -1514,6 +1517,10 @@ Centered grids align grid items centrally without needing to use push or pull cl
 
 .text--align-center {
   text-align: center;
+}
+
+.text--para-margin p:last-child {
+  margin-bottom: 0;
 }
 
 /*
@@ -1766,7 +1773,7 @@ button.form--story__button:hover {
 }
 
 .emphasis--more-small {
-  background-color: #fefbf5;
+  background-color: white;
 }
 
 .emphasis--more-pop {
@@ -1776,13 +1783,14 @@ button.form--story__button:hover {
 }
 
 .emphasis--less {
-  background-color: black;
+  background-color: #262626;
 }
 
 .off-canvas__outer {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
   background-color: #333333;
 }
 
@@ -1791,7 +1799,7 @@ button.form--story__button:hover {
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: black;
+  background-color: #333333;
   -webkit-transition: 0.2s ease-out;
   -moz-transition: 0.2s ease-out;
   -o-transition: 0.2s ease-out;
@@ -1842,13 +1850,13 @@ button.form--story__button:hover {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 [data-off-canvas=over] .off-canvas__header {
-  background-color: #1a1a1a;
+  background-color: #4d4d4d;
 }
 
 .off-canvas__header__title {
   font-size: 1em;
   line-height: 3em;
-  color: black;
+  color: #1a1a1a;
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -1881,7 +1889,7 @@ button.form--story__button:hover {
   z-index: 2;
 }
 [data-off-canvas=under].off-canvas--left, [data-off-canvas=under].off-canvas--right {
-  color: black;
+  color: #333333;
 }
 
 .off-canvas__target__body {
@@ -1964,12 +1972,12 @@ button.form--story__button:hover {
   float: left;
 }
 [data-off-canvas=over] .off-canvas__close {
-  background-color: black;
-  color: #0d0d0d;
+  background-color: #212121;
+  color: #404040;
 }
 [data-off-canvas=over] .off-canvas__close:hover {
-  background-color: black;
-  color: #1a1a1a;
+  background-color: #0d0d0d;
+  color: #4d4d4d;
 }
 
 .comment {
@@ -1988,19 +1996,7 @@ button.form--story__button:hover {
   font-weight: 300;
   font-style: italic;
   position: relative;
-  padding: 1.5em 1.5em 1.5em 3em;
   background-color: white;
-}
-.comment--medium:before, .comment--large:before {
-  content: "\201C";
-  position: absolute;
-  top: 0.68em;
-  left: 0.5em;
-  font-weight: 700;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
-  opacity: 0.2;
-  font-size: 2.5em;
-  line-height: 0.9em;
 }
 .comment--medium:after, .comment--large:after {
   content: "";
@@ -2025,12 +2021,15 @@ button.form--story__button:hover {
   padding: 1.2em 1.2em 1.2em 2.4em;
 }
 .comment--large:before {
-  top: 0.48em;
-  left: 0.4em;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
   opacity: 0.2;
   font-size: 1.875em;
   line-height: 1.2em;
+  position: absolute;
+  top: 0.48em;
+  left: 0.4em;
+  content: "\201C";
+  font-weight: 700;
 }
 
 .card__body {
@@ -2065,7 +2064,7 @@ button.form--story__button:hover {
 }
 
 .header {
-  background-color: #fefbf5;
+  position: relative;
 }
 
 .header__title {
@@ -2079,7 +2078,13 @@ button.form--story__button:hover {
 }
 
 .header__logo {
-  height: 3em;
-  width: 3em;
-  padding: 1.05em 0 0;
+  max-width: 6em;
+  padding: 1.125em 0 0.375em;
+}
+
+.header__tagline {
+  font-style: italic;
+  clear: both;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
 }

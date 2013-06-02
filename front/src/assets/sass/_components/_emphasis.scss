@@ -13,7 +13,7 @@ $emphasis-mod    : #{$emphasis-prefix}#{$mod} !default;
 }
 
 .#{$emphasis-mod}more-small {
-  background-color: lighten($color-bg-light, 3%);
+  background-color: $white;
 }
 
 .#{$emphasis-mod}more-pop {

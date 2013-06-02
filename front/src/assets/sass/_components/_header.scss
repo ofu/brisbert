@@ -1,6 +1,6 @@
 .header {
-  background-color: lighten($color-bg-light, 3%);
-
+  @extend .l--clearfix;
+  position: relative;
 }
 
 .header__title {
@@ -16,11 +16,22 @@
 }
 
 .header__logo {
-  height: rhythm(2);
-  width: rhythm(2);
-  padding: rhythm(.7) 0 0;
-  @include breakpoint($gte-large) {
-    height: rhythm(3);
-    width: rhythm(3);
+  max-width: rhythm(4);
+  padding: rhythm(.75) 0 rhythm(.25);
+  @include breakpoint($gte-huge) {
+    max-width: rhythm(5);
+  }
+}
+
+.header__tagline {
+  font-style: italic;
+  clear: both;
+  @include opacity(.6);
+  @include breakpoint($gte-medium) {
+    float: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: right;
   }
 }

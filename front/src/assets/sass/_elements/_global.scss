@@ -41,6 +41,7 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   min-height: 100%;
+  max-width: 100%;
   @include breakpoint($gte-medium) {
     @include adjust-font-size-to($medium-font-size, 1.25);
   }
@@ -52,5 +53,6 @@ html {
 body {
   margin: 0;
   background: $color-bg;
+  max-width: 100%;
   -webkit-overflow-scroll: touch;
 }
