@@ -2332,16 +2332,21 @@ button.form--story__button:hover {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_footer\.scss}line{font-family:\000031}}
 .footer {
-  background-color: #614E2D;
+  background-color: #01232d;
   color: #fbf5e8;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_footer\.scss}line{font-family:\000034}}
+.footer li {
+  border-color: #034659;
+}
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_footer\.scss}line{font-family:\000036}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_footer\.scss}line{font-family:\000039}}
 .footer__title {
   color: #fbf5e8;
+  margin-bottom: 0.75em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_footer\.scss}line{font-family:\0000310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_footer\.scss}line{font-family:\0000314}}
 .footer__block {
   font-size: 0.75em;
   line-height: 2em;

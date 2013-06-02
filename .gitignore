@@ -1,8 +1,7 @@
+# sqlite database
 /node_modules/
+webapp/webapp/assets/myouseum
 *.pyc
 *.egg-info
-
-# sqlite database
+bert.sqlite-journal
 *.sqlite
-
-webapp/webapp/assets/myouseum
