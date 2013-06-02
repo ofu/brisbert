@@ -1712,7 +1712,8 @@ input[type=text].form--story__text {
 }
 
 input[type=text].form--story__button,
-.form--story__button {
+.form--story__button,
+button.form--story__button {
   background: transparent;
   border: none;
   padding: 0;
@@ -1724,7 +1725,8 @@ input[type=text].form--story__button,
   transition: 0.2s ease-out;
 }
 input[type=text].form--story__button:hover,
-.form--story__button:hover {
+.form--story__button:hover,
+button.form--story__button:hover {
   color: #034659;
 }
 

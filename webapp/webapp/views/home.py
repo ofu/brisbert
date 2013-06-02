@@ -3,7 +3,7 @@ import requests
 
 @view_config(route_name='home', renderer='templates/home/home.jinja2')
 def home(request):
-    search_query = 'saurus'
+    search_query = ''
     if 'search_query' in request.POST:
         search_query = request.POST['search_query']
     year = 2012
