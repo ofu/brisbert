@@ -1,10 +1,10 @@
 $(function() {
 
   var textBoxWidth = $(".form--story__text").val().length;
-  $(".form--story__text").width(textBoxWidth * 17 + "px");
+  $(".form--story__text").width(textBoxWidth * 18 + "px");
 
   $(".form--story__text").autoGrowInput({
-      comfortZone: 20,
+      comfortZone: 40,
       minWidth: 40,
       maxWidth: 320
   });

@@ -5,6 +5,7 @@ import bottle
 import engines
 import random
 import data.bert.models as bert
+import data.twitter.models as twitter
 
 """ Set of keys useable by the rest api
 """
@@ -23,7 +24,7 @@ def _get_key(engine, name, key, value, num, request):
     for obj in retval:
         obj.setdefault('database', name)
         obj.setdefault('db_desc', engines.engine_desc(name))
-        
+    twitter.tweet_random()
     return retval
 
 
@@ -97,4 +98,6 @@ def database_bert_speak_to_me_random():
                                             
 if __name__ == '__main__':
     bottle.run(host='localhost', port=8080, debug=True)
+else:
+    application = bottle.default_app()
 
