@@ -15,15 +15,18 @@
       <button id="find_button" type="submit" class="btn">Search</button>
   </form> -->
 
-  <div class="l--push-v-2">
+  <div class="l--push-top-2 l--push-bottom-1">
 
     {% if result.url %}
       <div class="media--image l--push-bottom-2">
         <img src="{{result.url}}" alt="Test">
       </div>
     {% endif %}
+    <h3>Story/Description</h3>
     <p>{{result.text}}</p>
-    <p><a href="{{result.database}}/{{result.id}}">{{result.db_desc}}</a></p>
+    <h3>Collected from</h3>
+    <p>{{result.db_desc}}</p>
+    <h3>Keywords</h3>
     <p>
     {% for keyword in result.keyword %}
       {{keyword}}

@@ -1,10 +1,14 @@
 .footer {
-  background-color: #614E2D;
+  background-color: darken($color-primary, 24%);
   color: $color-bg-light;
+  li {
+    border-color: darken($color-primary, 18%);
+  }
 }
 
 .footer__title {
   color: $color-bg-light;
+  margin-bottom: rhythm(.5);
 }
 
 .footer__block {

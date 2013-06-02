@@ -2725,12 +2725,16 @@ button.form--story__button:hover {
 }
 
 .footer {
-  background-color: #614E2D;
+  background-color: #01232d;
   color: #fbf5e8;
+}
+.footer li {
+  border-color: #023a4b;
 }
 
 .footer__title {
   color: #fbf5e8;
+  margin-bottom: 0.75em;
 }
 
 .footer__block {
