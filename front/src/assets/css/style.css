@@ -974,7 +974,7 @@ These are components that can be utilised or are depended on by other components
 
 */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_layout\.scss}line{font-family:\0000332}}
-.l--clearfix, .l__wrapper {
+.l--clearfix, .l__wrapper, .header {
   overflow: hidden;
   *zoom: 1;
 }
@@ -3059,7 +3059,7 @@ button.form--story__button:hover {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_header\.scss}line{font-family:\000031}}
 .header {
-  background-color: #fefbf5;
+  position: relative;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_header\.scss}line{font-family:\000036}}
@@ -3090,5 +3090,23 @@ button.form--story__button:hover {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_header\.scss}line{font-family:\0000318}}
   .header__logo {
     max-width: 7.5em;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_header\.scss}line{font-family:\0000326}}
+.header__tagline {
+  font-style: italic;
+  clear: both;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+@media (min-width: 35em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lukebrooker\/Sites\/brisbert\/front\/src\/assets\/sass\/_components\/_header\.scss}line{font-family:\0000326}}
+  .header__tagline {
+    float: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: right;
   }
 }

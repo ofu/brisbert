@@ -841,7 +841,7 @@ These are components that can be utilised or are depended on by other components
 </div>
 
 */
-.l--clearfix, .l__wrapper {
+.l--clearfix, .l__wrapper, .header {
   overflow: hidden;
   *zoom: 1;
 }
@@ -2064,7 +2064,7 @@ button.form--story__button:hover {
 }
 
 .header {
-  background-color: #fefbf5;
+  position: relative;
 }
 
 .header__title {
@@ -2080,4 +2080,11 @@ button.form--story__button:hover {
 .header__logo {
   max-width: 6em;
   padding: 1.125em 0 0.375em;
+}
+
+.header__tagline {
+  font-style: italic;
+  clear: both;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
 }
