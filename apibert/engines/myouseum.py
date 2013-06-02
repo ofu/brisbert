@@ -31,7 +31,7 @@ class CollectionItemEngine(object):
         of value
         """
         item = myouseum.get_item_by_id(value)
-        return self._items([collection])
+        return self._items([item])
 
     def _items(self, items):
         results = []
