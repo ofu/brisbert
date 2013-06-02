@@ -17,6 +17,7 @@ requires = [
     'WebHelpers',
     'requests',
     'zope.sqlalchemy',
+    'twitter',
     ]
 
 setup(name='webapp',
