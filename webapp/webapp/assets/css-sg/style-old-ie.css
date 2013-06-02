@@ -2063,6 +2063,14 @@ button.form--story__button:hover {
   padding: 0.375em 1.5em;
 }
 
+.media--image {
+  align: center;
+}
+.media--image img {
+  margin: 0 auto;
+  display: block;
+}
+
 .header {
   position: relative;
 }
