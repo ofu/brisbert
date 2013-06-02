@@ -11,9 +11,6 @@
 */
 
 hr {
-  height: rhythm(1);
-  width: 100%;
-  border: 0;
+  border: 1px solid darken($color-bg-light, 5%);
   margin: rhythm(1) 0;
-  background: transparent;
 }

@@ -848,11 +848,8 @@ figcaption {
 
 */
 hr {
-  height: 1.5em;
-  width: 100%;
-  border: 0;
+  border: 1px solid #f8ecd2;
   margin: 1.5em 0;
-  background: transparent;
 }
 
 /*
