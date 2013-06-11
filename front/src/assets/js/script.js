@@ -1,4 +1,4 @@
-/*! brisbert - v0.1.0 - 2013-06-02
+/*! brisbert - v0.1.0 - 2013-06-12
 * https://github.com/brisbert/brisbert
 * Copyright (c) 2013 Old Folks United; Licensed MIT */
 ;

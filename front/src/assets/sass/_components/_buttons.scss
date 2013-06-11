@@ -1,0 +1,25 @@
+.button,
+.btn,
+button,
+input[type="submit"] {
+  background-color: $white;
+  color: $color-base-font;
+  border: none;
+  padding: rhythm(.375) rhythm(.5);
+  -webkit-appearance: none;
+  @include transition($default-transition);
+}
+
+.button--primary {
+  @extend .button;
+  background-color: $color-link;
+  color: lighten($color-bg-light, 3%);
+  &:hover {
+    background-color: $color-link-hover;
+    color: $white;
+  }
+  &:active {
+    background-color: $color-link-active;
+    color: $white;
+  }
+}

@@ -47,8 +47,14 @@ $text-mod    : #{$text-prefix}#{$mod};
 .#{$text-mod}meta {
   @include opacity(.5);
   @include transition($default-transition);
-  @include adjust-font-size-to(10px);
+  @include adjust-font-size-to(14px);
   @include ellipsis;
+  @include breakpoint($gte-medium) {
+    @include adjust-font-size-to(12px);
+  }
+  @include breakpoint($gte-large) {
+    @include adjust-font-size-to(10px);
+  }
   &:hover {
     @include opacity(1);
   }
